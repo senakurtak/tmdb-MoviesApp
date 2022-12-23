@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCellID" id="gTV-IL-0wX" customClass="CustomCollectionViewCell" customModule="MoviesApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="142"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="142"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-S3-IgG">
+                        <rect key="frame" x="25" y="-6" width="110" height="127.00000000000001"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="L0Q-Z2-gBc"/>
+                            <constraint firstAttribute="height" constant="128.33333333333331" id="g4L-mc-7wq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiI-tV-hWE">
+                        <rect key="frame" x="1" y="125" width="158" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYD-TV-U0U">
+                        <rect key="frame" x="111" y="7" width="29" height="34.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="29" id="K4P-zW-wuq"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="">
+                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="favBttn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TDh-L0-aoa"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.049893490970000003" green="0.14423009749999999" blue="0.24574136730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="FiI-tV-hWE" firstAttribute="top" secondItem="AYD-TV-U0U" secondAttribute="bottom" constant="83.666666666666657" id="3uk-1p-t7a"/>
+                <constraint firstAttribute="bottom" secondItem="FiI-tV-hWE" secondAttribute="bottom" id="52I-8F-hXV"/>
+                <constraint firstItem="m6u-S3-IgG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="6NH-Sr-q3R"/>
+                <constraint firstAttribute="trailing" secondItem="FiI-tV-hWE" secondAttribute="trailing" constant="1" id="8Mc-fk-5Q1"/>
+                <constraint firstAttribute="trailing" secondItem="m6u-S3-IgG" secondAttribute="trailing" constant="25" id="J3Q-M1-9Vh"/>
+                <constraint firstItem="m6u-S3-IgG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-6.9999999999999982" id="OLf-GN-xOz"/>
+                <constraint firstAttribute="trailing" secondItem="AYD-TV-U0U" secondAttribute="trailing" constant="20" id="jLw-li-DNO"/>
+                <constraint firstItem="FiI-tV-hWE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="uzJ-aO-qHu"/>
+            </constraints>
+            <size key="customSize" width="160" height="142"/>
+            <connections>
+                <outlet property="imageLabel" destination="FiI-tV-hWE" id="lbT-IU-xjZ"/>
+                <outlet property="images" destination="m6u-S3-IgG" id="tGL-Va-3ak"/>
+            </connections>
+            <point key="canvasLocation" x="59.541984732824424" y="-16.901408450704228"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

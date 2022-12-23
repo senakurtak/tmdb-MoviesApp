@@ -9,23 +9,63 @@
 /* Begin PBXBuildFile section */
 		F515F5F32955E232000766FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F5F22955E232000766FB /* AppDelegate.swift */; };
 		F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F5F42955E232000766FB /* SceneDelegate.swift */; };
-		F515F5F72955E232000766FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F5F62955E232000766FB /* ViewController.swift */; };
-		F515F5FA2955E232000766FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515F5F82955E232000766FB /* Main.storyboard */; };
 		F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */; };
 		F515F5FF2955E235000766FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F515F5FE2955E235000766FB /* Assets.xcassets */; };
 		F515F6022955E235000766FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515F6002955E235000766FB /* LaunchScreen.storyboard */; };
+		F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60A2955E24D000766FB /* MovieViewModel.swift */; };
+		F515F6242955E24F000766FB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60C2955E24D000766FB /* Constants.swift */; };
+		F515F6252955E24F000766FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60D2955E24D000766FB /* NetworkManager.swift */; };
+		F515F6262955E24F000766FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60E2955E24D000766FB /* API.swift */; };
+		F515F6272955E24F000766FB /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6102955E24E000766FB /* Movie.swift */; };
+		F515F6282955E24F000766FB /* FavoriteMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6112955E24E000766FB /* FavoriteMovies.swift */; };
+		F515F6292955E24F000766FB /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6142955E24E000766FB /* ContentViewController.swift */; };
+		F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */; };
+		F515F62B2955E24F000766FB /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6162955E24E000766FB /* ContentViewController.xib */; };
+		F515F62C2955E24F000766FB /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6172955E24E000766FB /* CustomCollectionViewCell.xib */; };
+		F515F62D2955E24F000766FB /* TabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6192955E24E000766FB /* TabBarController.xib */; };
+		F515F62E2955E24F000766FB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F61A2955E24E000766FB /* TabBarController.swift */; };
+		F515F62F2955E24F000766FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F61C2955E24E000766FB /* DetailViewController.swift */; };
+		F515F6302955E24F000766FB /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F61D2955E24E000766FB /* DetailViewController.xib */; };
+		F515F6312955E24F000766FB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F61F2955E24E000766FB /* FavoritesViewController.swift */; };
+		F515F6322955E24F000766FB /* FavoritesCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6202955E24E000766FB /* FavoritesCustomCollectionViewCell.xib */; };
+		F515F6332955E24F000766FB /* FavoritesCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6212955E24E000766FB /* FavoritesCustomCollectionViewCell.swift */; };
+		F515F6342955E24F000766FB /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6222955E24E000766FB /* FavoritesViewController.xib */; };
+		F515F6382955E2D9000766FB /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F515F6372955E2D9000766FB /* Moya */; };
+		F515F63B2955E30A000766FB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F515F63A2955E30A000766FB /* RxCocoa */; };
+		F515F63D2955E30A000766FB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F515F63C2955E30A000766FB /* RxSwift */; };
+		F515F6402955E345000766FB /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F515F63F2955E345000766FB /* RxRelay */; };
+		F515F6422955E353000766FB /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F515F6412955E353000766FB /* RxMoya */; };
+		F515F6452955E3C8000766FB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F515F6442955E3C8000766FB /* Realm */; };
+		F515F6472955E3C8000766FB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F515F6462955E3C8000766FB /* RealmSwift */; };
+		F515F64A2955E40D000766FB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F515F6492955E40D000766FB /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F515F5EF2955E232000766FB /* tmdb-MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-MoviesApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F515F5F22955E232000766FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F515F5F42955E232000766FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F515F5F62955E232000766FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F515F5F92955E232000766FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F515F5FC2955E232000766FB /* tmdb_MoviesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tmdb_MoviesApp.xcdatamodel; sourceTree = "<group>"; };
 		F515F5FE2955E235000766FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F515F6012955E235000766FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F515F6032955E235000766FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F515F60A2955E24D000766FB /* MovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		F515F60C2955E24D000766FB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F515F60D2955E24D000766FB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F515F60E2955E24D000766FB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F515F6102955E24E000766FB /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F515F6112955E24E000766FB /* FavoriteMovies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteMovies.swift; sourceTree = "<group>"; };
+		F515F6142955E24E000766FB /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		F515F6162955E24E000766FB /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		F515F6172955E24E000766FB /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		F515F6192955E24E000766FB /* TabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarController.xib; sourceTree = "<group>"; };
+		F515F61A2955E24E000766FB /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F515F61C2955E24E000766FB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F515F61D2955E24E000766FB /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F515F61F2955E24E000766FB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		F515F6202955E24E000766FB /* FavoritesCustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		F515F6212955E24E000766FB /* FavoritesCustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		F515F6222955E24E000766FB /* FavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F515F6452955E3C8000766FB /* Realm in Frameworks */,
+				F515F6422955E353000766FB /* RxMoya in Frameworks */,
+				F515F64A2955E40D000766FB /* SDWebImage in Frameworks */,
+				F515F6472955E3C8000766FB /* RealmSwift in Frameworks */,
+				F515F63D2955E30A000766FB /* RxSwift in Frameworks */,
+				F515F63B2955E30A000766FB /* RxCocoa in Frameworks */,
+				F515F6402955E345000766FB /* RxRelay in Frameworks */,
+				F515F6382955E2D9000766FB /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +92,7 @@
 			children = (
 				F515F5F12955E232000766FB /* tmdb-MoviesApp */,
 				F515F5F02955E232000766FB /* Products */,
+				F515F63E2955E345000766FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +107,111 @@
 		F515F5F12955E232000766FB /* tmdb-MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
-				F515F5F22955E232000766FB /* AppDelegate.swift */,
-				F515F5F42955E232000766FB /* SceneDelegate.swift */,
-				F515F5F62955E232000766FB /* ViewController.swift */,
-				F515F5F82955E232000766FB /* Main.storyboard */,
+				F515F6352955E259000766FB /* Support */,
+				F515F60F2955E24E000766FB /* Models */,
+				F515F60B2955E24D000766FB /* Utils */,
+				F515F6092955E24D000766FB /* ViewModels */,
+				F515F6122955E24E000766FB /* Views */,
 				F515F5FE2955E235000766FB /* Assets.xcassets */,
 				F515F6002955E235000766FB /* LaunchScreen.storyboard */,
 				F515F6032955E235000766FB /* Info.plist */,
 				F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */,
 			);
 			path = "tmdb-MoviesApp";
+			sourceTree = "<group>";
+		};
+		F515F6092955E24D000766FB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F515F60A2955E24D000766FB /* MovieViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F515F60B2955E24D000766FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F515F60C2955E24D000766FB /* Constants.swift */,
+				F515F60D2955E24D000766FB /* NetworkManager.swift */,
+				F515F60E2955E24D000766FB /* API.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F515F60F2955E24E000766FB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F515F6102955E24E000766FB /* Movie.swift */,
+				F515F6112955E24E000766FB /* FavoriteMovies.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F515F6122955E24E000766FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F515F6132955E24E000766FB /* HomeVC */,
+				F515F6182955E24E000766FB /* TabBar */,
+				F515F61B2955E24E000766FB /* DetailVC */,
+				F515F61E2955E24E000766FB /* FavVC */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F515F6132955E24E000766FB /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				F515F6142955E24E000766FB /* ContentViewController.swift */,
+				F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */,
+				F515F6162955E24E000766FB /* ContentViewController.xib */,
+				F515F6172955E24E000766FB /* CustomCollectionViewCell.xib */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		F515F6182955E24E000766FB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F515F6192955E24E000766FB /* TabBarController.xib */,
+				F515F61A2955E24E000766FB /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F515F61B2955E24E000766FB /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				F515F61C2955E24E000766FB /* DetailViewController.swift */,
+				F515F61D2955E24E000766FB /* DetailViewController.xib */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		F515F61E2955E24E000766FB /* FavVC */ = {
+			isa = PBXGroup;
+			children = (
+				F515F61F2955E24E000766FB /* FavoritesViewController.swift */,
+				F515F6202955E24E000766FB /* FavoritesCustomCollectionViewCell.xib */,
+				F515F6212955E24E000766FB /* FavoritesCustomCollectionViewCell.swift */,
+				F515F6222955E24E000766FB /* FavoritesViewController.xib */,
+			);
+			path = FavVC;
+			sourceTree = "<group>";
+		};
+		F515F6352955E259000766FB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				F515F5F42955E232000766FB /* SceneDelegate.swift */,
+				F515F5F22955E232000766FB /* AppDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		F515F63E2955E345000766FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +230,16 @@
 			dependencies = (
 			);
 			name = "tmdb-MoviesApp";
+			packageProductDependencies = (
+				F515F6372955E2D9000766FB /* Moya */,
+				F515F63A2955E30A000766FB /* RxCocoa */,
+				F515F63C2955E30A000766FB /* RxSwift */,
+				F515F63F2955E345000766FB /* RxRelay */,
+				F515F6412955E353000766FB /* RxMoya */,
+				F515F6442955E3C8000766FB /* Realm */,
+				F515F6462955E3C8000766FB /* RealmSwift */,
+				F515F6492955E40D000766FB /* SDWebImage */,
+			);
 			productName = "tmdb-MoviesApp";
 			productReference = F515F5EF2955E232000766FB /* tmdb-MoviesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +268,12 @@
 				Base,
 			);
 			mainGroup = F515F5E62955E232000766FB;
+			packageReferences = (
+				F515F6362955E2D9000766FB /* XCRemoteSwiftPackageReference "Moya" */,
+				F515F6392955E30A000766FB /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F515F6432955E3C8000766FB /* XCRemoteSwiftPackageReference "realm-swift" */,
+				F515F6482955E40D000766FB /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = F515F5F02955E232000766FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,9 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F515F62B2955E24F000766FB /* ContentViewController.xib in Resources */,
+				F515F62D2955E24F000766FB /* TabBarController.xib in Resources */,
+				F515F6302955E24F000766FB /* DetailViewController.xib in Resources */,
+				F515F6322955E24F000766FB /* FavoritesCustomCollectionViewCell.xib in Resources */,
+				F515F6342955E24F000766FB /* FavoritesViewController.xib in Resources */,
 				F515F6022955E235000766FB /* LaunchScreen.storyboard in Resources */,
 				F515F5FF2955E235000766FB /* Assets.xcassets in Resources */,
-				F515F5FA2955E232000766FB /* Main.storyboard in Resources */,
+				F515F62C2955E24F000766FB /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +306,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F515F5F72955E232000766FB /* ViewController.swift in Sources */,
+				F515F62E2955E24F000766FB /* TabBarController.swift in Sources */,
+				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,
+				F515F6282955E24F000766FB /* FavoriteMovies.swift in Sources */,
+				F515F6272955E24F000766FB /* Movie.swift in Sources */,
 				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,
+				F515F6252955E24F000766FB /* NetworkManager.swift in Sources */,
+				F515F6332955E24F000766FB /* FavoritesCustomCollectionViewCell.swift in Sources */,
 				F515F5F32955E232000766FB /* AppDelegate.swift in Sources */,
+				F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */,
 				F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */,
+				F515F6292955E24F000766FB /* ContentViewController.swift in Sources */,
+				F515F6262955E24F000766FB /* API.swift in Sources */,
+				F515F6242955E24F000766FB /* Constants.swift in Sources */,
+				F515F6312955E24F000766FB /* FavoritesViewController.swift in Sources */,
+				F515F62F2955E24F000766FB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F515F5F82955E232000766FB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F515F5F92955E232000766FB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F515F6002955E235000766FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +464,6 @@
 				INFOPLIST_FILE = "tmdb-MoviesApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +491,6 @@
 				INFOPLIST_FILE = "tmdb-MoviesApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,6 +528,84 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F515F6362955E2D9000766FB /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F515F6392955E30A000766FB /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		F515F6432955E3C8000766FB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F515F6482955E40D000766FB /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F515F6372955E2D9000766FB /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6362955E2D9000766FB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		F515F63A2955E30A000766FB /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6392955E30A000766FB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F515F63C2955E30A000766FB /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6392955E30A000766FB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F515F63F2955E345000766FB /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6392955E30A000766FB /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F515F6412955E353000766FB /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6362955E2D9000766FB /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		F515F6442955E3C8000766FB /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6432955E3C8000766FB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F515F6462955E3C8000766FB /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6432955E3C8000766FB /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		F515F6492955E40D000766FB /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F515F6482955E40D000766FB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */ = {
