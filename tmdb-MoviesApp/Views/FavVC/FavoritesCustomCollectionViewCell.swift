@@ -4,8 +4,9 @@
 //
 //  Created by Sena Kurtak on 13.12.2022.
 //
-
+import Foundation
 import UIKit
+import CoreData
 
 class FavoritesCustomCollectionViewCell: UICollectionViewCell {
 
@@ -13,11 +14,16 @@ class FavoritesCustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var favoriteMovieLabel: UILabel!
     
-    lazy public var favArr : [Movie] = []
+    var completion: () -> () = { }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("awakafrom nib çalıştı ve favArr'in \(favArr.count) adet üyesi var!!")
-        // Initialization code
+    }
+    
+    var indexPath: Int?
+    
+    @IBAction func didTappedSaveButton(_ sender: Any) {
+        print("didTappedSaveButton tapped!!")
+        completion()
     }
 }

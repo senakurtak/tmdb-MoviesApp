@@ -24,12 +24,19 @@ class DetailViewController: UIViewController {
     var favoriteCheck : Bool = true
     
     var selectedMovie : Movie?
+        
+    var savedMovieList : [FavoriteMovies] = []
     
     let realm = try! Realm()
+    
+    var isMovieSaved : Bool = false
+    var indexOfMovie : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpMovie()
+        retrieveMovieDetails()
+//        configureFavouriteButton()
     }
     
     func setUpMovie(){
@@ -44,41 +51,91 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func favButton(_ sender: UIButton) {
+    
+    @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
         let image = favoriteCheck ? UIImage(systemName: "heart.fill") : UIImage(systemName:"heart")
         sender.setImage(image, for: .normal)
         print("Fav button tapped for \(selectedMovie!.title)")
-        renderWithRealm()
+//        renderWithRealm()
         favoriteCheck.toggle()
+        
+        if (!isMovieSaved){
+            let savedMovie = FavoriteMovies(isSaved: true,
+                                            backdropPath: selectedMovie?.backdropPath ?? "",
+                                            overview: selectedMovie?.overview ?? "",
+                                            popularity: selectedMovie?.popularity ?? 0.0,
+                                            posterPath: selectedMovie?.posterPath ?? "",
+                                            releaseDate: selectedMovie?.releaseDate ?? "",
+                                            title: selectedMovie?.title ?? "",
+                                            voteAverage: selectedMovie?.voteAverage ?? 0.0)
+            self.savedMovieList.append(savedMovie)
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey:"favoriteMovies")
+            
+        } else {
+            self.savedMovieList.remove(at: indexOfMovie)
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey: "favoriteMovies")
+        }
+        print("savedMovieList dizisinin \(savedMovieList.count) tane elemanı vardır  \(savedMovieList[0])")
+    
     }
     
-    func save(){
-        let favSelectedMovie = FavoriteMovie()
-        favSelectedMovie.movieTitle = selectedMovie!.title
-        realm.beginWrite()
-        realm.add(favSelectedMovie)
-        try! realm.commitWrite()
+    func retrieveMovieDetails() {
+        
+        if let data = UserDefaults.standard.value(forKey: "favoriteMovies") as? Data {
+            let favoriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
+            savedMovieList = favoriteMovies ?? []
+        }
+        
     }
+//    func configureFavouriteButton(){
+//                        if (isMovieSaved) {
+//                            favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//                        } else {
+//                            favouriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//                        }
+//    }
     
-    func render(){
-        var movie = realm.objects(FavoriteMovie.self)
-        for movie in movie{
-            selectedMovie?.title = movie.movieTitle
-            print("Realm üzerinden\(movie.movieTitle) renderlandı!")
-            print(Realm.Configuration.defaultConfiguration.fileURL)
+    private func checkIfIsSaved(movieName: String?) -> Bool {
+        if !savedMovieList.contains(where: { $0.title == movieName }) {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    func checkIfMovieWillSaved(movieName : String?) -> Bool {
+        if savedMovieList.contains(where: {$0.title == movieName}){
+            return false
+        } else {
+            return true
         }
     }
     
-    func renderWithRealm(){
-        realm.beginWrite()
-//        realm.delete(realm.objects(FavoriteMovie.self))
-        try! realm.commitWrite()
-        save()
-        render()
-
-    }
+    //    func save(){
+    //        let favSelectedMovie = FavoriteMovie()
+    //        favSelectedMovie.movieTitle = selectedMovie!.title
+    //        realm.beginWrite()
+    //        realm.add(favSelectedMovie)
+    //        try! realm.commitWrite()
+    //    }
+    //
+    //    func render(){
+    //        var movie = realm.objects(FavoriteMovie.self)
+    //        for movie in movie{
+    //            selectedMovie?.title = movie.movieTitle
+    //            print("Realm üzerinden\(movie.movieTitle) renderlandı!")
+    //            print(Realm.Configuration.defaultConfiguration.fileURL)
+    //        }
+    //    }
+    //
+    //    func renderWithRealm(){
+    //        realm.beginWrite()
+    ////        realm.delete(realm.objects(FavoriteMovie.self))
+    //        try! realm.commitWrite()
+    //        save()
+    //        render()
+    //
+    //    }
 }
 
-class FavoriteMovie: Object{
-    @objc dynamic var movieTitle: String = ""
-}
+

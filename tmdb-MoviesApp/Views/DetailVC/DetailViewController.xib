@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MoviesApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="tmdb_MoviesApp" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="TnN-v4-erE" id="GqU-GV-ZlP"/>
                 <outlet property="overviewTextView" destination="QSQ-Oi-lJw" id="GD1-Og-TVP"/>
@@ -116,7 +117,7 @@
                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="favButton:" destination="-1" eventType="touchUpInside" id="1ye-pY-GG4"/>
+                        <action selector="didTappedFavouriteButton:" destination="-1" eventType="touchUpInside" id="kRO-2k-6vd"/>
                     </connections>
                 </button>
             </subviews>

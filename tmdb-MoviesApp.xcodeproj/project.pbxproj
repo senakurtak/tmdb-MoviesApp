@@ -150,8 +150,8 @@
 		F515F6122955E24E000766FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F515F6132955E24E000766FB /* HomeVC */,
 				F515F6182955E24E000766FB /* TabBar */,
+				F515F6132955E24E000766FB /* HomeVC */,
 				F515F61B2955E24E000766FB /* DetailVC */,
 				F515F61E2955E24E000766FB /* FavVC */,
 			);
@@ -162,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				F515F6142955E24E000766FB /* ContentViewController.swift */,
-				F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */,
 				F515F6162955E24E000766FB /* ContentViewController.xib */,
+				F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */,
 				F515F6172955E24E000766FB /* CustomCollectionViewCell.xib */,
 			);
 			path = HomeVC;
@@ -191,9 +191,9 @@
 			isa = PBXGroup;
 			children = (
 				F515F61F2955E24E000766FB /* FavoritesViewController.swift */,
-				F515F6202955E24E000766FB /* FavoritesCustomCollectionViewCell.xib */,
-				F515F6212955E24E000766FB /* FavoritesCustomCollectionViewCell.swift */,
 				F515F6222955E24E000766FB /* FavoritesViewController.xib */,
+				F515F6212955E24E000766FB /* FavoritesCustomCollectionViewCell.swift */,
+				F515F6202955E24E000766FB /* FavoritesCustomCollectionViewCell.xib */,
 			);
 			path = FavVC;
 			sourceTree = "<group>";

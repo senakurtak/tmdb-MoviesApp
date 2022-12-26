@@ -36,6 +36,7 @@ class ContentViewController: UIViewController  {
     
     var movieListUpComing : [Movie] = []
     
+//    var savedMovieList : [FavoriteMovies] = []
     
     enum Section : Int {
         case popular = 0
@@ -46,9 +47,38 @@ class ContentViewController: UIViewController  {
     }
     
     
+//    
+//    func checkIfMovieWillSaved(movieName : String?) -> Bool {
+//        if savedMovieList.contains(where: {$0.title == movieName}){
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+//    
+//    private func checkIfIsSaved(movieName: String?) -> Bool {
+//        if !savedMovieList.contains(where: { $0.title == movieName }) {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+//    
+//    private func findIndexOfElementInArray(movieName: String?) -> Int {
+//        let index = savedMovieList.firstIndex { $0.title == movieName }
+//        return index ?? 0
+//    }
+//    
+//    private func retrieveSavedMovies() {
+//        if let data = UserDefaults.standard.value(forKey:"favouriteMovies") as? Data {
+//            let favouriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
+//            savedMovieList = favouriteMovies ?? []
+//        }
+//    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel.fetchPopularMovies()
         viewModel.fetchTop_RatedMovies()
         viewModel.fetchUpComingMovies()
@@ -61,11 +91,13 @@ class ContentViewController: UIViewController  {
     }
     
     func bindCollectionViewData(){
+        
         self.viewModel.movieList.bind(to: collectionViewPopular.rx.items(cellIdentifier: "collectionViewCellID", cellType: CustomCollectionViewCell.self)){(row, movie, cell) in
             cell.imageLabel.text = movie.title
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewPopular.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
@@ -80,6 +112,7 @@ class ContentViewController: UIViewController  {
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewTopRelated.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
@@ -93,10 +126,12 @@ class ContentViewController: UIViewController  {
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewUpcoming.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
             self.navigationController?.pushViewController(detailsVC, animated: true)
+            // indexOfMovie göndermek için
         }.disposed(by: bag)
     }
 }

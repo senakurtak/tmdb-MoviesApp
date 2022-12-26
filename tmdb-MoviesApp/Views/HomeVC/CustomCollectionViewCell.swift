@@ -12,21 +12,24 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     var favoriteCheck : Bool = true
     
+    var buttonTapCallback: () -> () = { }
+    
     @IBOutlet weak var images: UIImageView!
     
     @IBOutlet weak var imageLabel: UILabel!
     
-    @IBAction func favBttn(_ sender: UIButton) {
+    @IBAction func didTappedFavoriteButton(_ sender: UIButton) {
         favoriteCheck.toggle()
         let image = favoriteCheck ? UIImage(systemName: "heart") : UIImage(systemName:"heart.fill")
         sender.setImage(image, for: .normal)
     }
     
     
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     let moviesViewModel = MovieViewModel()
     
     var movieList = [Movie]()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
