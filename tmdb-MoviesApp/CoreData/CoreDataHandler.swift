@@ -22,12 +22,12 @@ final class CoreDataHandler{
         let item = NSManagedObject(entity: entity, insertInto: context)
         
         item.setValuesForKeys([
-            "backdropPath" : movie.backdropPath ?? "",
+            "backdropPath" : movie.backdropPath as Any,
             "id" : movie.id,
-            "overview": movie.overview,
+            "overview": movie.overview ,
             "popularity" : movie.popularity,
-            "posterPath" : movie.posterPath ?? "",
-            "releaseDate" : movie.releaseDate,
+            "posterPath" : movie.posterPath as Any,
+            "releaseDate" : movie.releaseDate as Any,
             "title" : movie.title,
             "voteAverage": movie.voteAverage
         ])
@@ -44,7 +44,7 @@ final class CoreDataHandler{
         let context = appDelegate.persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<Movies>(entityName: "Movies")
-        let sortDescriptor = NSSortDescriptor(key: "is", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         let objects = try! context.fetch(fetchRequest)
@@ -70,35 +70,26 @@ final class CoreDataHandler{
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movies")
         do{
             
-            let fetchResults = try! context.fetch(fetchRequest)
-            
+            let fetchResults = try context.fetch(fetchRequest)
             for item in fetchResults {
-                
                 if !savedArr.contains(where: {$0.id == item.value(forKey: "id") as! Int}){
-                    
-                    let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as! String,
+                    let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
                                          id: item.value(forKey: "id") as! Int,
                                          overview: item.value(forKey: "overview") as! String,
                                          popularity: item.value(forKey: "popularity") as! Double,
-                                         posterPath: item.value(forKey: "posterPath") as! String,
-                                         releaseDate: item.value(forKey: "releaseDate") as! String,
+                                         posterPath: item.value(forKey: "posterPath") as? String,
+                                         releaseDate: item.value(forKey: "releaseDate") as? String,
                                          title: item.value(forKey: "title") as! String,
                                          voteAverage: item.value(forKey: "voteAverage") as! Double)
                     savedArr.append(savedObj)
                 } else {
                     print("already added")
                 }
-                
-                
             }
-            
-            
-        } catch{
-            
+            print("added final")
+        } catch {
             print(error)
         }
-        
         CoreDataHandler.shared.savedArr = savedArr
     }
-
 }

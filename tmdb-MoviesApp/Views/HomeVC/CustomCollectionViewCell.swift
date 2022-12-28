@@ -17,9 +17,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageLabel: UILabel!
     
     @IBAction func didTappedFavoriteButton(_ sender: UIButton) {
-        favoriteCheck.toggle()
-        let image = favoriteCheck ? UIImage(systemName: "heart") : UIImage(systemName:"heart.fill")
-        sender.setImage(image, for: .normal)
+//        favoriteCheck.toggle()
+//        let image = favoriteCheck ? UIImage(systemName: "heart") : UIImage(systemName:"heart.fill")
+//        sender.setImage(image, for: .normal)
     }
     
     
@@ -29,5 +29,17 @@ class CustomCollectionViewCell: UICollectionViewCell {
         
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func setupCell(movie: Movie){
+        
+        imageLabel.text = movie.title
+        let urlString = "https://image.tmdb.org/t/p/w185\(movie.backdropPath ?? "")"
+        images.sd_setImage(with: URL(string: urlString))
+        if CoreDataHandler.shared.savedArr.contains(where: {$0.id == movie.id}){
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
     }
 }

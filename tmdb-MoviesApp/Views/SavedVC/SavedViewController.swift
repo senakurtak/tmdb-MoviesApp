@@ -17,13 +17,12 @@ class SavedViewController: UIViewController {
         super.viewDidLoad()
         configure()
         savedMovieTableView.register(SavedTableViewCell.self, forCellReuseIdentifier: "SavedTableViewCellID")
-        
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
-//        favArr = CoreDataHandler.shared.savedArr
+        favArr = CoreDataHandler.shared.savedArr
         savedMovieTableView.reloadData()
+        
     }
     func configure(){
         savedMovieTableView.delegate = self
@@ -53,6 +52,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
             let urlString = "https://image.tmdb.org/t/p/w185\(favArr[indexPath.row].backdropPath ?? "")"
             detailsVC.imageView.sd_setImage(with: URL(string: urlString))
             detailsVC.rdLabel.text = "\(favArr[indexPath.row].releaseDate)"
+//            detailsVC.selectedMovie = favArr[indexPath.item]
+            navigationController?.pushViewController(detailsVC, animated: true)
         }
     }
     

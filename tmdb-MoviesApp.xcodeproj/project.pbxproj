@@ -22,7 +22,6 @@
 		F515F6252955E24F000766FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60D2955E24D000766FB /* NetworkManager.swift */; };
 		F515F6262955E24F000766FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60E2955E24D000766FB /* API.swift */; };
 		F515F6272955E24F000766FB /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6102955E24E000766FB /* Movie.swift */; };
-		F515F6282955E24F000766FB /* FavoriteMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6112955E24E000766FB /* FavoriteMovies.swift */; };
 		F515F6292955E24F000766FB /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6142955E24E000766FB /* ContentViewController.swift */; };
 		F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */; };
 		F515F62B2955E24F000766FB /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F515F6162955E24E000766FB /* ContentViewController.xib */; };
@@ -59,7 +58,6 @@
 		F515F60D2955E24D000766FB /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F515F60E2955E24D000766FB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F515F6102955E24E000766FB /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		F515F6112955E24E000766FB /* FavoriteMovies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteMovies.swift; sourceTree = "<group>"; };
 		F515F6142955E24E000766FB /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F515F6152955E24E000766FB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		F515F6162955E24E000766FB /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				F515F6102955E24E000766FB /* Movie.swift */,
-				F515F6112955E24E000766FB /* FavoriteMovies.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -320,7 +317,6 @@
 				F515F62E2955E24F000766FB /* TabBarController.swift in Sources */,
 				B3D61AF8295BA8FF00BB94A9 /* CoreDataHandler.swift in Sources */,
 				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,
-				F515F6282955E24F000766FB /* FavoriteMovies.swift in Sources */,
 				B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */,
 				F515F6272955E24F000766FB /* Movie.swift in Sources */,
 				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,
