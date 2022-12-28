@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="tmdb_MoviesApp" customModuleProvider="target">
             <connections>
+                <outlet property="buttonFav" destination="tWO-Vd-RMk" id="wl2-5J-vNu"/>
                 <outlet property="imageView" destination="TnN-v4-erE" id="GqU-GV-ZlP"/>
                 <outlet property="overviewTextView" destination="QSQ-Oi-lJw" id="GD1-Og-TVP"/>
                 <outlet property="popularLabel" destination="0oo-7h-DGR" id="uPc-Uu-72k"/>
