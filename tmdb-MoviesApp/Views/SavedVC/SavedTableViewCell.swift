@@ -17,16 +17,19 @@ class SavedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favMovieVote: UILabel!
     
+    var selectedMovie : Movie?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         print("savedtableviewcell çalıştı")
+        setCell(movie: selectedMovie!)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell(movie: Movie){        
+    func setCell(movie: Movie){
         favMovieTitle.text = movie.title
         favMovieVote.text = "\(movie.voteAverage)"
         favMoviePopularity.text = "\(movie.popularity)"

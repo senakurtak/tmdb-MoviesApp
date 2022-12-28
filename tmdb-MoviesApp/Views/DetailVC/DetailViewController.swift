@@ -56,12 +56,11 @@ class DetailViewController: UIViewController {
             popularLabel.text = "\(movies.popularity)"
             let urlString = "https://image.tmdb.org/t/p/w185\(movies.backdropPath ?? "")"
             imageView.sd_setImage(with: URL(string: urlString))
-            rdLabel.text = "\(movies.releaseDate)"
+            if let text: String = movies.releaseDate {
+                rdLabel.text = text
+            }
         }
     }
-    
-    
-    
     
     @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
         
