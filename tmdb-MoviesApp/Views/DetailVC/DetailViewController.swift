@@ -6,6 +6,7 @@
 //
 import RealmSwift
 import UIKit
+import Foundation
 
 class DetailViewController: UIViewController {
     
@@ -21,27 +22,16 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    
     @IBOutlet weak var buttonFav: UIButton!
     
-    var favoriteCheck : Bool = true
-    
+
     var selectedMovie : Movie?
-    
     var savedMovieList : [Movie] = []
-    
-    let realm = try! Realm()
-    
-    //    var isMovieSaved : Bool = false
-    //    var indexOfMovie : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        //        retrieveMovieDetails()
-        //        configureFavouriteButton()
     }
-    
     
     func configure(){
         checkFav()
@@ -79,9 +69,12 @@ class DetailViewController: UIViewController {
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
             CoreDataHandler.shared.deleteData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            let cell = CustomCollectionViewCell()
+            cell.favoriteCheck = true
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-            
+            let cell = CustomCollectionViewCell()
+            cell.favoriteCheck = false
         }
     }
 }
