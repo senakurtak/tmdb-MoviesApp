@@ -11,9 +11,7 @@ import RealmSwift
 class CustomCollectionViewCell: UICollectionViewCell {
     
     var favoriteCheck : Bool = true
-    
-    var buttonTapCallback: () -> () = { }
-    
+        
     @IBOutlet weak var images: UIImageView!
     
     @IBOutlet weak var imageLabel: UILabel!
@@ -28,9 +26,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     let moviesViewModel = MovieViewModel()
-    
-    var movieList = [Movie]()
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
     }

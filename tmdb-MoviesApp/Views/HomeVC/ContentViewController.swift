@@ -31,9 +31,7 @@ class ContentViewController: UIViewController  {
     var bag = DisposeBag()
     
     var movieList : [Movie] = []
-    
     var movieListTopRelated : [Movie] = []
-    
     var movieListUpComing : [Movie] = []
     
 //    var savedMovieList : [FavoriteMovies] = []
@@ -45,38 +43,6 @@ class ContentViewController: UIViewController  {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: (13/255), green: (37/255), blue: (63/255), alpha: (0.0))
     }
-    
-    
-//    
-//    func checkIfMovieWillSaved(movieName : String?) -> Bool {
-//        if savedMovieList.contains(where: {$0.title == movieName}){
-//            return false
-//        } else {
-//            return true
-//        }
-//    }
-//    
-//    private func checkIfIsSaved(movieName: String?) -> Bool {
-//        if !savedMovieList.contains(where: { $0.title == movieName }) {
-//            return false
-//        } else {
-//            return true
-//        }
-//    }
-//    
-//    private func findIndexOfElementInArray(movieName: String?) -> Int {
-//        let index = savedMovieList.firstIndex { $0.title == movieName }
-//        return index ?? 0
-//    }
-//    
-//    private func retrieveSavedMovies() {
-//        if let data = UserDefaults.standard.value(forKey:"favouriteMovies") as? Data {
-//            let favouriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
-//            savedMovieList = favouriteMovies ?? []
-//        }
-//    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchPopularMovies()
@@ -135,3 +101,30 @@ class ContentViewController: UIViewController  {
         }.disposed(by: bag)
     }
 }
+//    func checkIfMovieWillSaved(movieName : String?) -> Bool {
+//        if savedMovieList.contains(where: {$0.title == movieName}){
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+//
+//    private func checkIfIsSaved(movieName: String?) -> Bool {
+//        if !savedMovieList.contains(where: { $0.title == movieName }) {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
+//
+//    private func findIndexOfElementInArray(movieName: String?) -> Int {
+//        let index = savedMovieList.firstIndex { $0.title == movieName }
+//        return index ?? 0
+//    }
+//
+//    private func retrieveSavedMovies() {
+//        if let data = UserDefaults.standard.value(forKey:"favouriteMovies") as? Data {
+//            let favouriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
+//            savedMovieList = favouriteMovies ?? []
+//        }
+//    }

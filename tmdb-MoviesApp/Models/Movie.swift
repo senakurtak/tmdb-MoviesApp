@@ -14,7 +14,7 @@ struct MovieResponse: Codable{
 // MARK: - Result (Movie olarak değiştirdim.)
 struct Movie: Codable {
     let backdropPath: String?
-    let genreIDS: [Int]
+//    let genreIDS: [Int]
     let id: Int
     let overview: String
     let popularity: Double
@@ -25,7 +25,7 @@ struct Movie: Codable {
     
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
-        case genreIDS = "genre_ids"
+//        case genreIDS = "genre_ids"
         case id
         case overview
         case popularity

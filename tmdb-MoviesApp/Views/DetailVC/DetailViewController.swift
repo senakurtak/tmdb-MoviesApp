@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     
     var selectedMovie : Movie?
         
-    var savedMovieList : [FavoriteMovies] = []
+    var savedMovieList : [Movie] = []
     
     let realm = try! Realm()
     
@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpMovie()
-        retrieveMovieDetails()
+//        retrieveMovieDetails()
 //        configureFavouriteButton()
     }
     
@@ -59,34 +59,34 @@ class DetailViewController: UIViewController {
 //        renderWithRealm()
         favoriteCheck.toggle()
         
-        if (!isMovieSaved){
-            let savedMovie = FavoriteMovies(isSaved: true,
-                                            backdropPath: selectedMovie?.backdropPath ?? "",
-                                            overview: selectedMovie?.overview ?? "",
-                                            popularity: selectedMovie?.popularity ?? 0.0,
-                                            posterPath: selectedMovie?.posterPath ?? "",
-                                            releaseDate: selectedMovie?.releaseDate ?? "",
-                                            title: selectedMovie?.title ?? "",
-                                            voteAverage: selectedMovie?.voteAverage ?? 0.0)
-            self.savedMovieList.append(savedMovie)
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey:"favoriteMovies")
-            
-        } else {
-            self.savedMovieList.remove(at: indexOfMovie)
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey: "favoriteMovies")
-        }
-        print("savedMovieList dizisinin \(savedMovieList.count) tane elemanı vardır  \(savedMovieList[0])")
+//        if (!isMovieSaved){
+//            let savedMovie = FavoriteMovies(isSaved: true,
+//                                            backdropPath: selectedMovie?.backdropPath ?? "",
+//                                            overview: selectedMovie?.overview ?? "",
+//                                            popularity: selectedMovie?.popularity ?? 0.0,
+//                                            posterPath: selectedMovie?.posterPath ?? "",
+//                                            releaseDate: selectedMovie?.releaseDate ?? "",
+//                                            title: selectedMovie?.title ?? "",
+//                                            voteAverage: selectedMovie?.voteAverage ?? 0.0)
+//            self.savedMovieList.append(savedMovie)
+//            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey:"favoriteMovies")
+//
+//        } else {
+//            self.savedMovieList.remove(at: indexOfMovie)
+//            UserDefaults.standard.set(try? PropertyListEncoder().encode(self.savedMovieList), forKey: "favoriteMovies")
+//        }
+//        print("savedMovieList dizisinin \(savedMovieList.count) tane elemanı vardır  \(savedMovieList[0])")
     
     }
     
-    func retrieveMovieDetails() {
-        
-        if let data = UserDefaults.standard.value(forKey: "favoriteMovies") as? Data {
-            let favoriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
-            savedMovieList = favoriteMovies ?? []
-        }
-        
-    }
+//    func retrieveMovieDetails() {
+//
+//        if let data = UserDefaults.standard.value(forKey: "favoriteMovies") as? Data {
+//            let favoriteMovies = try? PropertyListDecoder().decode(Array<FavoriteMovies>.self, from: data)
+//            savedMovieList = favoriteMovies ?? []
+//        }
+//
+//    }
 //    func configureFavouriteButton(){
 //                        if (isMovieSaved) {
 //                            favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)

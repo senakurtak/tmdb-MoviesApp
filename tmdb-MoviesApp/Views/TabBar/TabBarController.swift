@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
         //        self.tabBar.backgroundColor = UIColor(red: (2/255), green: (41/255), blue: (71/255), alpha: (0.0))
         
         let firstVC = ContentViewController()
-        let secondVC = FavoritesViewController()
+        let secondVC = SavedViewController()
         
         self.setViewControllers([firstVC,secondVC], animated: true)
         firstVC.title = "Home"
