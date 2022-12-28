@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var buttonFav: UIButton!
     
-
+    
     var selectedMovie : Movie?
     var savedMovieList : [Movie] = []
     
@@ -46,8 +46,16 @@ class DetailViewController: UIViewController {
             popularLabel.text = "\(movies.popularity)"
             let urlString = "https://image.tmdb.org/t/p/w185\(movies.backdropPath ?? "")"
             imageView.sd_setImage(with: URL(string: urlString))
+            
+//            let dateString = movies.releaseDate
+//            let convertedDateString = convertDateFormat(dateString: dateString?)
+//            rdLabel.text = convertedDateString
+            
+//            print(convertedDateString) // prints "29-Feb-1996"
+
             if let text: String = movies.releaseDate {
-                rdLabel.text = text
+                let convertedDateString = convertDateFormat(dateString: text)
+                rdLabel.text = convertedDateString
             }
         }
     }
@@ -77,4 +85,29 @@ class DetailViewController: UIViewController {
             cell.favoriteCheck = false
         }
     }
+    
+    func convertDateFormat(dateString: String) -> String {
+        // Create a date formatter
+        let formatter = DateFormatter()
+
+        // Set the input format for the date formatter
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US")
+
+
+        // Convert the input string to a date object
+        guard let date = formatter.date(from: dateString) else {
+            return "Invalid date"
+        }
+
+        // Set the output format for the date formatter
+        formatter.dateFormat = "dd MMM yyyy"
+
+        // Convert the date object to a string in the desired output format
+        let convertedDateString = formatter.string(from: date)
+
+        return convertedDateString
+    }
+
+    
 }

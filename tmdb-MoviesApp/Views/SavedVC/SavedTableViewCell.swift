@@ -30,10 +30,10 @@ class SavedTableViewCell: UITableViewCell {
     }
     
     func setCell(movie: Movie){
-//        favMovieTitle.text = movie.title
-//        favMovieVote.text = "\(movie.voteAverage)"
-//        favMoviePopularity.text = "\(movie.popularity)"
-//        let urlString = "https://image.tmdb.org/t/p/w185\(movie.backdropPath ?? "")"
-//        favImage.sd_setImage(with: URL(string: urlString))
+        favMovieTitle.text = movie.title
+        favMovieVote.text = "\(movie.voteAverage)"
+        favMoviePopularity.text = "\(movie.popularity)"
+        let urlString = "https://image.tmdb.org/t/p/w185\(movie.backdropPath ?? "")"
+        favImage.sd_setImage(with: URL(string: urlString))
     }
 }

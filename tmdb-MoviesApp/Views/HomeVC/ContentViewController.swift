@@ -76,6 +76,7 @@ class ContentViewController: UIViewController  {
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewTopRelated.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
