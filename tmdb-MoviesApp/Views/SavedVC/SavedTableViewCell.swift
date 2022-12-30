@@ -42,7 +42,7 @@ class SavedTableViewCell: UITableViewCell {
         favMovieTitle.text = movie.title
         favMovieVote.text = "\(movie.voteAverage)"
         favMoviePopularity.text = "\(movie.popularity)"
-        let urlString = "https://image.tmdb.org/t/p/w185\(movie.backdropPath ?? "")"
+        let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
         favImage.sd_setImage(with: URL(string: urlString))
     }
 }
