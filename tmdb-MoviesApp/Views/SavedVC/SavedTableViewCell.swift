@@ -13,6 +13,8 @@ class SavedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favMovieTitle: UILabel!
     
+    @IBOutlet weak var eyeImage: UIImageView!
+    
     @IBOutlet weak var favMoviePopularity: UILabel!
     
     @IBOutlet weak var favMovieVote: UILabel!
@@ -30,6 +32,13 @@ class SavedTableViewCell: UITableViewCell {
     }
     
     func setCell(movie: Movie){
+        
+//        print("movie.title")
+//        print("\(movie.voteAverage)")
+//        print("\(movie.popularity)")
+//        print("https://image.tmdb.org/t/p/w185\(movie.backdropPath ?? "")")
+//        print("setcell çalıştı")
+
         favMovieTitle.text = movie.title
         favMovieVote.text = "\(movie.voteAverage)"
         favMoviePopularity.text = "\(movie.popularity)"

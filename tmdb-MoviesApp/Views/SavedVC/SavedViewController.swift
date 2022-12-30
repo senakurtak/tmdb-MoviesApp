@@ -16,15 +16,15 @@ class SavedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        savedMovieTableView.register(SavedTableViewCell.self, forCellReuseIdentifier: "SavedTableViewCellID")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         favArr = CoreDataHandler.shared.savedArr
         savedMovieTableView.reloadData()
-        
     }
+    
     func configure(){
+        savedMovieTableView.register(UINib(nibName: "SavedTableViewCell", bundle: nil), forCellReuseIdentifier: "SavedTableViewCellID")
         savedMovieTableView.delegate = self
         savedMovieTableView.dataSource = self
     }
@@ -38,24 +38,29 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = savedMovieTableView.dequeueReusableCell(withIdentifier: "SavedTableViewCellID", for: indexPath) as! SavedTableViewCell
-//        cell.selectedMovie = favArr[indexPath.item]
+        //        cell.selectedMovie = favArr[indexPath.item]
         cell.setCell(movie: favArr[indexPath.item])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         savedMovieTableView.deselectRow(at: indexPath, animated: true)
-        if let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil) as? DetailViewController {
-            detailsVC.titleLabel.text = favArr[indexPath.row].title
-            detailsVC.overviewTextView.text = favArr[indexPath.row].overview
-            detailsVC.voteLabel.text = "\(favArr[indexPath.row].voteAverage)"
-            detailsVC.popularLabel.text = "\(favArr[indexPath.row].popularity)"
-            let urlString = "https://image.tmdb.org/t/p/w185\(favArr[indexPath.row].backdropPath ?? "")"
-            detailsVC.imageView.sd_setImage(with: URL(string: urlString))
-            detailsVC.rdLabel.text = "\(favArr[indexPath.row].releaseDate)"
-//            detailsVC.selectedMovie = favArr[indexPath.item]
-            navigationController?.pushViewController(detailsVC, animated: true)
-        }
+//        if let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil) as? DetailViewController {
+            let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+            detailsVC.selectedMovie = favArr[indexPath.row]
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+//        }
+        //        if let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil) as? DetailViewController {
+        //            detailsVC.titleLabel.text = favArr[indexPath.row].title
+        //            detailsVC.overviewTextView.text = favArr[indexPath.row].overview
+        //            detailsVC.voteLabel.text = "\(favArr[indexPath.row].voteAverage)"
+        //            detailsVC.popularLabel.text = "\(favArr[indexPath.row].popularity)"
+        //            let urlString = "https://image.tmdb.org/t/p/w185\(favArr[indexPath.row].posterPath ?? "")"
+        //            detailsVC.imageView.sd_setImage(with: URL(string: urlString))
+        //            detailsVC.rdLabel.text = "\(favArr[indexPath.row].releaseDate)"
+        ////            detailsVC.selectedMovie = favArr[indexPath.item]
+        //            navigationController?.pushViewController(detailsVC, animated: true)
+        //        }
     }
     
 }

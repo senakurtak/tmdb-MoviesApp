@@ -33,9 +33,7 @@ class ContentViewController: UIViewController  {
     var movieList : [Movie] = []
     var movieListTopRelated : [Movie] = []
     var movieListUpComing : [Movie] = []
-    
-//    var savedMovieList : [FavoriteMovies] = []
-    
+        
     enum Section : Int {
         case popular = 0
     }

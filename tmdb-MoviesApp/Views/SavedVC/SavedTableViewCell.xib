@@ -18,71 +18,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GrapeJelly" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-JQ-4NU">
-                        <rect key="frame" x="0.0" y="6" width="169" height="208"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYD-fS-Gce">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYD-fS-Gce">
                         <rect key="frame" x="202" y="171" width="36.333333333333343" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.30891668799999999" green="0.3135321438" blue="0.36110925669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-J2-nJy">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDC-J2-nJy">
                         <rect key="frame" x="177" y="178" width="22.333333333333343" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" red="0.90196078430000004" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <imageReference key="image" image="star" catalog="system" renderingMode="template"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sJQ-si-QNc">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJQ-si-QNc">
                         <rect key="frame" x="177" y="129.33333333333334" width="20" height="16.333333333333329"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="tintColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageReference key="image" image="eye" catalog="system" renderingMode="template"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiV-PK-WCH">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Popularity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiV-PK-WCH">
                         <rect key="frame" x="202" y="129" width="81" height="20.333333333333343"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.30980392159999998" green="0.31372549020000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title Movie Title Movie Title Movie Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1r-0c-OIl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title Movie Title Movie Title Movie Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1r-0c-OIl">
                         <rect key="frame" x="177" y="18" width="143" height="90"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <color key="textColor" red="0.30980392159999998" green="0.31372549020000001" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.gif" translatesAutoresizingMaskIntoConstraints="NO" id="vT6-JQ-4NU">
+                        <rect key="frame" x="8" y="-15" width="169" height="208"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="fiV-PK-WCH" firstAttribute="leading" secondItem="sJQ-si-QNc" secondAttribute="leading" constant="25" id="0A0-ve-OmH"/>
-                    <constraint firstItem="vYD-fS-Gce" firstAttribute="leading" secondItem="UDC-J2-nJy" secondAttribute="leading" constant="25" id="mjG-hD-Ohu"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" red="0.049893490970000003" green="0.14423009749999999" blue="0.24574136730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="u1r-0c-OIl" secondAttribute="trailing" id="0vb-Zd-X8o"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="sJQ-si-QNc" secondAttribute="bottom" constant="72.666666666666657" id="1jv-pp-fVt"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="vT6-JQ-4NU" secondAttribute="bottom" constant="6" id="5Tv-4O-Yas"/>
-                <constraint firstItem="vT6-JQ-4NU" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="6" id="6fH-Yh-v8I"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="vYD-fS-Gce" secondAttribute="bottom" constant="15" id="6fS-Ub-53B"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="UDC-J2-nJy" secondAttribute="trailing" constant="120.66666666666666" id="9xf-xl-Nrz"/>
-                <constraint firstItem="fiV-PK-WCH" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="129" id="FOd-gm-Fmg"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="vT6-JQ-4NU" secondAttribute="trailing" constant="151" id="Uet-Pv-mza"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="fiV-PK-WCH" secondAttribute="bottom" constant="70.666666666666686" id="Zj7-fI-nYe"/>
-                <constraint firstItem="vT6-JQ-4NU" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="am4-A3-WdI"/>
-                <constraint firstItem="sJQ-si-QNc" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="177" id="cS6-1Y-gLh"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="sJQ-si-QNc" secondAttribute="trailing" constant="123" id="f20-QR-fp5"/>
-                <constraint firstItem="u1r-0c-OIl" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="18" id="fSZ-v1-hn9"/>
-                <constraint firstItem="sJQ-si-QNc" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="127" id="iua-SX-hF0"/>
-                <constraint firstItem="UDC-J2-nJy" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="178.33333333333334" id="lep-0O-hCW"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="UDC-J2-nJy" secondAttribute="bottom" constant="21.333333333333343" id="o5C-f4-aGw"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="u1r-0c-OIl" secondAttribute="bottom" constant="112" id="osT-Lg-7Hn"/>
-                <constraint firstItem="vYD-fS-Gce" firstAttribute="top" secondItem="njF-e1-oar" secondAttribute="top" constant="171" id="qHl-bw-1by"/>
-                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="vYD-fS-Gce" secondAttribute="trailing" constant="81.666666666666657" id="v8c-SV-xQ8"/>
-                <constraint firstItem="UDC-J2-nJy" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="177" id="vzN-2Q-2qM"/>
-                <constraint firstItem="u1r-0c-OIl" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="177" id="xnO-RG-u6K"/>
-            </constraints>
             <connections>
+                <outlet property="eyeImage" destination="sJQ-si-QNc" id="6Mp-MG-zRW"/>
                 <outlet property="favImage" destination="vT6-JQ-4NU" id="bed-1d-WzL"/>
-                <outlet property="favMoviePopularity" destination="fiV-PK-WCH" id="BoZ-cM-Lgg"/>
+                <outlet property="favMoviePopularity" destination="fiV-PK-WCH" id="BDI-o2-xEX"/>
                 <outlet property="favMovieTitle" destination="u1r-0c-OIl" id="ctH-JL-Y3z"/>
                 <outlet property="favMovieVote" destination="vYD-fS-Gce" id="dxn-G9-FQa"/>
             </connections>
@@ -90,7 +70,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="GrapeJelly" width="56" height="167"/>
+        <image name="1.gif" width="200" height="200"/>
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>

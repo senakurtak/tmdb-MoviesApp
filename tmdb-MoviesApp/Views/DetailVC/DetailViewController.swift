@@ -24,7 +24,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var buttonFav: UIButton!
     
-    
     var selectedMovie : Movie?
     var savedMovieList : [Movie] = []
     
@@ -46,13 +45,6 @@ class DetailViewController: UIViewController {
             popularLabel.text = "\(movies.popularity)"
             let urlString = "https://image.tmdb.org/t/p/w185\(movies.backdropPath ?? "")"
             imageView.sd_setImage(with: URL(string: urlString))
-            
-//            let dateString = movies.releaseDate
-//            let convertedDateString = convertDateFormat(dateString: dateString?)
-//            rdLabel.text = convertedDateString
-            
-//            print(convertedDateString) // prints "29-Feb-1996"
-
             if let text: String = movies.releaseDate {
                 let convertedDateString = convertDateFormat(dateString: text)
                 rdLabel.text = convertedDateString
@@ -77,12 +69,8 @@ class DetailViewController: UIViewController {
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
             CoreDataHandler.shared.deleteData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            let cell = CustomCollectionViewCell()
-            cell.favoriteCheck = true
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-            let cell = CustomCollectionViewCell()
-            cell.favoriteCheck = false
         }
     }
     
@@ -108,6 +96,5 @@ class DetailViewController: UIViewController {
 
         return convertedDateString
     }
-
     
 }
