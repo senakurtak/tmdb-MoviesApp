@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,36 +30,20 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYD-TV-U0U">
-                        <rect key="frame" x="111" y="7" width="29" height="34.333333333333336"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="29" id="K4P-zW-wuq"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="">
-                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                        </buttonConfiguration>
-                        <connections>
-                            <action selector="didTappedFavoriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3vs-Q2-SOK"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" red="0.049893490970000003" green="0.14423009749999999" blue="0.24574136730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="FiI-tV-hWE" firstAttribute="top" secondItem="AYD-TV-U0U" secondAttribute="bottom" constant="83.666666666666657" id="3uk-1p-t7a"/>
                 <constraint firstAttribute="bottom" secondItem="FiI-tV-hWE" secondAttribute="bottom" id="52I-8F-hXV"/>
                 <constraint firstItem="m6u-S3-IgG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="6NH-Sr-q3R"/>
                 <constraint firstAttribute="trailing" secondItem="FiI-tV-hWE" secondAttribute="trailing" constant="1" id="8Mc-fk-5Q1"/>
                 <constraint firstAttribute="trailing" secondItem="m6u-S3-IgG" secondAttribute="trailing" constant="25" id="J3Q-M1-9Vh"/>
                 <constraint firstItem="m6u-S3-IgG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-6.9999999999999982" id="OLf-GN-xOz"/>
-                <constraint firstAttribute="trailing" secondItem="AYD-TV-U0U" secondAttribute="trailing" constant="20" id="jLw-li-DNO"/>
                 <constraint firstItem="FiI-tV-hWE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="uzJ-aO-qHu"/>
             </constraints>
             <size key="customSize" width="160" height="142"/>
             <connections>
-                <outlet property="favoriteButton" destination="AYD-TV-U0U" id="Qee-8R-xPs"/>
                 <outlet property="imageLabel" destination="FiI-tV-hWE" id="lbT-IU-xjZ"/>
                 <outlet property="images" destination="m6u-S3-IgG" id="tGL-Va-3ak"/>
             </connections>
@@ -68,10 +51,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

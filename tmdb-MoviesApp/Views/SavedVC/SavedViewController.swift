@@ -40,12 +40,13 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = savedMovieTableView.dequeueReusableCell(withIdentifier: "SavedTableViewCellID", for: indexPath) as! SavedTableViewCell
         //        cell.selectedMovie = favArr[indexPath.item]
         cell.setCell(movie: favArr[indexPath.item])
+        print(favArr[indexPath.item])
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         savedMovieTableView.deselectRow(at: indexPath, animated: true)
-//        if let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil) as? DetailViewController {
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = favArr[indexPath.row]
             self.navigationController?.pushViewController(detailsVC, animated: true)

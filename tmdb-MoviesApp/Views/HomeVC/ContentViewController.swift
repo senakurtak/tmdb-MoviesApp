@@ -13,7 +13,7 @@ import Moya
 import RxCocoa
 
 class ContentViewController: UIViewController  {
-        
+    
     @IBOutlet weak var popularLabel: UILabel!
     
     @IBOutlet weak var top_relatedLabel: UILabel!
@@ -33,7 +33,9 @@ class ContentViewController: UIViewController  {
     var movieList : [Movie] = []
     var movieListTopRelated : [Movie] = []
     var movieListUpComing : [Movie] = []
-        
+    
+    
+    
     enum Section : Int {
         case popular = 0
     }
@@ -43,12 +45,15 @@ class ContentViewController: UIViewController  {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.fetchPopularMovies()
         viewModel.fetchTop_RatedMovies()
         viewModel.fetchUpComingMovies()
+        
         bindCollectionViewData()
         bindUpComingCollectionViewData()
         bindTopRelatedCollectionViewData()
+        
         collectionViewPopular.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewCellID")
         collectionViewUpcoming.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewCellID")
         collectionViewTopRelated.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewCellID")
@@ -60,12 +65,12 @@ class ContentViewController: UIViewController  {
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewPopular.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }.disposed(by: bag)
-        
     }
     
     func bindTopRelatedCollectionViewData(){
@@ -88,6 +93,7 @@ class ContentViewController: UIViewController  {
             let urlString = "https://image.tmdb.org/t/p/w185\(movie.posterPath ?? "")"
             cell.images.sd_setImage(with: URL(string: urlString))
         }.disposed(by: bag)
+        
         collectionViewUpcoming.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model

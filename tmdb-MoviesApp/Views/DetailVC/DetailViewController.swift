@@ -67,10 +67,11 @@ class DetailViewController: UIViewController {
     
     func checkFav(){
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-            CoreDataHandler.shared.deleteData(movie: selectedMovie!)
+//
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
+//            CoreDataHandler.shared.deleteData(movie: selectedMovie!)
         }
     }
     

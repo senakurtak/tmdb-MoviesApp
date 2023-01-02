@@ -17,10 +17,13 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageLabel: UILabel!
     
     @IBAction func didTappedFavoriteButton(_ sender: UIButton) {
+        
+        
 //        ana sayfadaki favori ekleme işlevi kaldırılabilir.
 //        favoriteCheck.toggle()
 //        let image = favoriteCheck ? UIImage(systemName: "heart") : UIImage(systemName:"heart.fill")
 //        sender.setImage(image, for: .normal)
+        
     }
     
     
