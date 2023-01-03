@@ -12,15 +12,15 @@ struct MovieResponse: Codable{
 }
 
 struct Movie: Codable {
-    let backdropPath: String?
-    let id: Int
-    let overview: String
-    let popularity: Double
-    let posterPath: String?
-    let releaseDate: String?
-    var title: String
-    let voteAverage: Double
-    //    let genreIDS: [Int]
+   var backdropPath: String?
+   var id: Int
+   var overview: String
+   var popularity: Double
+   var posterPath: String?
+   var releaseDate: String?
+   var title: String
+   var voteAverage: Double
+//var genreIDS: [Int]
 
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"

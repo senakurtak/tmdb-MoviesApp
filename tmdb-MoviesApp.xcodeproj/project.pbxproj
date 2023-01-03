@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */; };
 		B34B3AFF29642B7F00209189 /* MovieSavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */; };
+		B34B3B0129644C3100209189 /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3B0029644C3100209189 /* RealmHandler.swift */; };
+		B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3B0329644DBD00209189 /* FavoriteMovie.swift */; };
 		B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */; };
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSavedViewModel.swift; sourceTree = "<group>"; };
+		B34B3B0029644C3100209189 /* RealmHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHandler.swift; sourceTree = "<group>"; };
+		B34B3B0329644DBD00209189 /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
 		B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B34B3B0229644C4200209189 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				B34B3B0029644C3100209189 /* RealmHandler.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		B3D61AE9295B9D3F00BB94A9 /* SavedVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		F515F5F12955E232000766FB /* tmdb-MoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				B34B3B0229644C4200209189 /* Realm */,
 				B3D61AF6295BA8EB00BB94A9 /* CoreData */,
 				F515F6352955E259000766FB /* Support */,
 				F515F60F2955E24E000766FB /* Models */,
@@ -168,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				F515F6102955E24E000766FB /* Movie.swift */,
+				B34B3B0329644DBD00209189 /* FavoriteMovie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +341,7 @@
 				B34B3AFF29642B7F00209189 /* MovieSavedViewModel.swift in Sources */,
 				B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */,
 				F515F6272955E24F000766FB /* Movie.swift in Sources */,
+				B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */,
 				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,
 				B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */,
 				F515F6252955E24F000766FB /* NetworkManager.swift in Sources */,
@@ -337,6 +352,7 @@
 				F515F6262955E24F000766FB /* API.swift in Sources */,
 				F515F6242955E24F000766FB /* Constants.swift in Sources */,
 				F515F62F2955E24F000766FB /* DetailViewController.swift in Sources */,
+				B34B3B0129644C3100209189 /* RealmHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

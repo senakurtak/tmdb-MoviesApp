@@ -11,10 +11,11 @@ import CoreData
 
 class MovieDetailViewModel : ObservableObject {
     
-    var favArr : [Movie] = []
+//    var favArr : [Movie] = []
     
     func saveDataToCoreData(movie: Movie){
         CoreDataHandler.shared.saveToCoreData(movie: movie)
+//        self.favArr = CoreDataHandler.shared.savedArr
     }
     
     func deleteDataFromCoreData(movie: Movie){

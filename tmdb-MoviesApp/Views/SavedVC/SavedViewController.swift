@@ -16,16 +16,17 @@ class SavedViewController: UIViewController {
     let savedViewModel = MovieSavedViewModel()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         configure()
-        savedViewModel.fetchCoreDataFavorites()
-
+//        savedViewModel.fetchCoreDataFavorites()
+        self.favArr = savedViewModel.fetchCoreDataFavorites(tableView: savedMovieTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
 //        favArr = savedViewModel.favArr
-        savedMovieTableView.reloadData()
+        self.favArr = savedViewModel.fetchCoreDataFavorites(tableView: savedMovieTableView)
+
+//        savedMovieTableView.reloadData()
     }
     
     func configure(){

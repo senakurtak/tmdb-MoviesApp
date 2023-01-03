@@ -7,12 +7,15 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class MovieSavedViewModel : ObservableObject {
- 
+    
     lazy public var favArr = [Movie]()
     
-    func fetchCoreDataFavorites(){
+    func fetchCoreDataFavorites(tableView : UITableView) -> [Movie]{
         favArr = CoreDataHandler.shared.savedArr
+        tableView.reloadData()
+        return favArr
     }
 }

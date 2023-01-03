@@ -92,6 +92,7 @@ final class CoreDataHandler{
         } catch {
             print(error)
         }
+    
         CoreDataHandler.shared.savedArr = savedArr
     }
 }
