@@ -25,7 +25,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var buttonFav: UIButton!
     
     var selectedMovie : Movie?
-    var savedMovieList : [Movie] = []
+    var detailViewModel : MovieDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
         
+        
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
             CoreDataHandler.shared.deleteData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
@@ -67,34 +68,32 @@ class DetailViewController: UIViewController {
     
     func checkFav(){
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-//
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-//            CoreDataHandler.shared.deleteData(movie: selectedMovie!)
         }
     }
     
     func convertDateFormat(dateString: String) -> String {
         // Create a date formatter
         let formatter = DateFormatter()
-
+        
         // Set the input format for the date formatter
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "en_US")
-
-
+        
+        
         // Convert the input string to a date object
         guard let date = formatter.date(from: dateString) else {
             return "Invalid date"
         }
-
+        
         // Set the output format for the date formatter
         formatter.dateFormat = "dd MMM yyyy"
-
+        
         // Convert the date object to a string in the desired output format
         let convertedDateString = formatter.string(from: date)
-
+        
         return convertedDateString
     }
     

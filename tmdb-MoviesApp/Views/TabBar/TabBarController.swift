@@ -10,10 +10,9 @@ import UIKit
 class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
-        //        self.tabBar.backgroundColor = UIColor(red: (2/255), green: (41/255), blue: (71/255), alpha: (0.0))
-        
+            
         let firstVC = ContentViewController()
         let secondVC = SavedViewController()
         

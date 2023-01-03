@@ -11,9 +11,6 @@ import UIKit
 import RxCocoa
 import RxRelay
 
-protocol MovieViewModelDelegate {
-    func onSuccessfullMoviesLoaded()
-}
 
 class MovieViewModel : ObservableObject {
     

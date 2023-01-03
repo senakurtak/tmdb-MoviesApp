@@ -13,6 +13,8 @@ class SavedViewController: UIViewController {
     
     lazy public var favArr = [Movie]()
     
+    var detailViewModel : MovieDetailViewModel?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -50,18 +52,6 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = favArr[indexPath.row]
             self.navigationController?.pushViewController(detailsVC, animated: true)
-//        }
-        //        if let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil) as? DetailViewController {
-        //            detailsVC.titleLabel.text = favArr[indexPath.row].title
-        //            detailsVC.overviewTextView.text = favArr[indexPath.row].overview
-        //            detailsVC.voteLabel.text = "\(favArr[indexPath.row].voteAverage)"
-        //            detailsVC.popularLabel.text = "\(favArr[indexPath.row].popularity)"
-        //            let urlString = "https://image.tmdb.org/t/p/w185\(favArr[indexPath.row].posterPath ?? "")"
-        //            detailsVC.imageView.sd_setImage(with: URL(string: urlString))
-        //            detailsVC.rdLabel.text = "\(favArr[indexPath.row].releaseDate)"
-        ////            detailsVC.selectedMovie = favArr[indexPath.item]
-        //            navigationController?.pushViewController(detailsVC, animated: true)
-        //        }
     }
     
 }

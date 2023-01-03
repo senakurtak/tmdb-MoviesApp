@@ -23,8 +23,6 @@ class SavedTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("savedtableviewcell çalıştı")
-//        setCell(movie: selectedMovie!)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
