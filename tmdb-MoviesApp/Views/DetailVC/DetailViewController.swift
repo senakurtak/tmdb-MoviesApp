@@ -36,6 +36,18 @@ class DetailViewController: UIViewController {
         checkFav()
         setUpMovie()
     }
+        
+    @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
+        if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
+            detailViewModel.deleteDataFromCoreData(movie: selectedMovie!)
+            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else {
+            detailViewModel.saveDataToCoreData(movie: selectedMovie!)
+            CoreDataHandler.shared.saveToCoreData(movie: selectedMovie!)
+            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            
+        }
+    }
     
     func setUpMovie(){
         if let movies = selectedMovie{
@@ -51,19 +63,7 @@ class DetailViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
-        if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-            detailViewModel.deleteDataFromCoreData(movie: selectedMovie!)
-            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-        } else {
-            detailViewModel.saveDataToCoreData(movie: selectedMovie!)
-            CoreDataHandler.shared.saveToCoreData(movie: selectedMovie!)
-            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            
-        }
-    }
-    
+
     func checkFav(){
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)

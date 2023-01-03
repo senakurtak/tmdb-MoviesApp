@@ -16,6 +16,7 @@ class SavedViewController: UIViewController {
     let savedViewModel = MovieSavedViewModel()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         configure()
         savedViewModel.fetchCoreDataFavorites()
@@ -23,7 +24,7 @@ class SavedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        favArr = savedViewModel.favArr
+//        favArr = savedViewModel.favArr
         savedMovieTableView.reloadData()
     }
     
@@ -37,7 +38,6 @@ class SavedViewController: UIViewController {
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return savedViewModel.favArr.count
-//        favArr.count
     }
     
     

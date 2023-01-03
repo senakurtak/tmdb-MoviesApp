@@ -197,8 +197,8 @@
 		F515F6182955E24E000766FB /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				F515F6192955E24E000766FB /* TabBarController.xib */,
 				F515F61A2955E24E000766FB /* TabBarController.swift */,
+				F515F6192955E24E000766FB /* TabBarController.xib */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";

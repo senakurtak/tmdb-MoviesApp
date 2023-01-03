@@ -19,7 +19,7 @@ class MovieViewModel : ObservableObject {
     var movieListTopRelated = PublishSubject<[Movie]>()
     
     var movieListUpComing = PublishSubject<[Movie]>()
-
+    
     var dictionary : [String:[Movie]] = [:]
     
     var bag : DisposeBag = DisposeBag()
