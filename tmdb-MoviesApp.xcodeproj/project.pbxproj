@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */; };
+		B34B3AFF29642B7F00209189 /* MovieSavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */; };
 		B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */; };
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSavedViewModel.swift; sourceTree = "<group>"; };
 		B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				F515F60A2955E24D000766FB /* MovieViewModel.swift */,
 				B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */,
+				B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B3D61AF8295BA8FF00BB94A9 /* CoreDataHandler.swift in Sources */,
 				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,
 				B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */,
+				B34B3AFF29642B7F00209189 /* MovieSavedViewModel.swift in Sources */,
 				B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */,
 				F515F6272955E24F000766FB /* Movie.swift in Sources */,
 				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,

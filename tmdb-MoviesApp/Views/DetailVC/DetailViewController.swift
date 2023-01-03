@@ -25,8 +25,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var buttonFav: UIButton!
     
     var selectedMovie : Movie?
-    var detailViewModel : MovieDetailViewModel?
-    
+    var detailViewModel = MovieDetailViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -53,13 +53,11 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
-        
-        
         if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-            CoreDataHandler.shared.deleteData(movie: selectedMovie!)
+            detailViewModel.deleteDataFromCoreData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-            
         } else {
+            detailViewModel.saveDataToCoreData(movie: selectedMovie!)
             CoreDataHandler.shared.saveToCoreData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             

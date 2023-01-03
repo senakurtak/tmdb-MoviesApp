@@ -13,15 +13,17 @@ class SavedViewController: UIViewController {
     
     lazy public var favArr = [Movie]()
     
-    var detailViewModel : MovieDetailViewModel?
-        
+    let savedViewModel = MovieSavedViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        savedViewModel.fetchCoreDataFavorites()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        favArr = CoreDataHandler.shared.savedArr
+        favArr = savedViewModel.favArr
         savedMovieTableView.reloadData()
     }
     
@@ -34,23 +36,21 @@ class SavedViewController: UIViewController {
 
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favArr.count
+        return savedViewModel.favArr.count
+//        favArr.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = savedMovieTableView.dequeueReusableCell(withIdentifier: "SavedTableViewCellID", for: indexPath) as! SavedTableViewCell
-        //        cell.selectedMovie = favArr[indexPath.item]
-        cell.setCell(movie: favArr[indexPath.item])
-        print(favArr[indexPath.item])
-
+        cell.setCell(movie: savedViewModel.favArr[indexPath.item])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         savedMovieTableView.deselectRow(at: indexPath, animated: true)
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
-            detailsVC.selectedMovie = favArr[indexPath.row]
+            detailsVC.selectedMovie = savedViewModel.favArr[indexPath.item]
             self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
