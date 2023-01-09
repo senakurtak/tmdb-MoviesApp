@@ -14,8 +14,6 @@ final class CoreDataHandler{
     static let shared = CoreDataHandler()
     
     var savedArr = [Movie]()
-   
-    let detailViewModel = MovieDetailViewModel()
     
     func saveToCoreData(movie: Movie){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}

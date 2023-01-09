@@ -10,7 +10,7 @@ import RealmSwift
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
-    var favoriteCheck : Bool = false
+//    var favoriteCheck : Bool = false
     
     @IBOutlet weak var images: UIImageView!
     

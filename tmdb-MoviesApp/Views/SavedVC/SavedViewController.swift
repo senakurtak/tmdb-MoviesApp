@@ -18,15 +18,12 @@ class SavedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-//        savedViewModel.fetchCoreDataFavorites()
-        self.favArr = savedViewModel.fetchCoreDataFavorites(tableView: savedMovieTableView)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        favArr = savedViewModel.favArr
-        self.favArr = savedViewModel.fetchCoreDataFavorites(tableView: savedMovieTableView)
-
-//        savedMovieTableView.reloadData()
+        self.favArr = savedViewModel.fetchRealmFavorites(tableView: savedMovieTableView)
+        
     }
     
     func configure(){
@@ -50,9 +47,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         savedMovieTableView.deselectRow(at: indexPath, animated: true)
-            let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
-            detailsVC.selectedMovie = savedViewModel.favArr[indexPath.item]
-            self.navigationController?.pushViewController(detailsVC, animated: true)
+        let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        detailsVC.selectedMovie = savedViewModel.favArr[indexPath.item]
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
-    
 }

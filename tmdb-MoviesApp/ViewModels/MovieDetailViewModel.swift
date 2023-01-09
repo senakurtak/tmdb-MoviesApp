@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import RealmSwift
 
 class MovieDetailViewModel : ObservableObject {
     
@@ -20,5 +21,15 @@ class MovieDetailViewModel : ObservableObject {
     
     func deleteDataFromCoreData(movie: Movie){
         CoreDataHandler.shared.deleteData(movie: movie)
+    
+    }
+    
+    func saveToRealmDataBase(movie: Movie){
+        RealmHandler.shared.setFavoriteMovie(selectedMovie: movie)
+    }
+    
+    func deleteDataFromRealmDataBase(movie: Movie){
+        RealmHandler.shared.removeFromFavorites(selectedMovie: movie)
+
     }
 }

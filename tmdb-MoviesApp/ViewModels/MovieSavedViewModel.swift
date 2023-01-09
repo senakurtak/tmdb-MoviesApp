@@ -18,4 +18,13 @@ class MovieSavedViewModel : ObservableObject {
         tableView.reloadData()
         return favArr
     }
+    
+    func fetchRealmFavorites(tableView: UITableView) -> [Movie]{
+        favArr = RealmHandler.shared.savedArray
+        tableView.reloadData()
+        return favArr
+    }
+    
+    
+    
 }

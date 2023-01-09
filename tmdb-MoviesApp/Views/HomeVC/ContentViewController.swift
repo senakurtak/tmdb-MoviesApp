@@ -68,6 +68,7 @@ class ContentViewController: UIViewController  {
         
         collectionViewPopular.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+            detailsVC.favMovieID = model.id
             detailsVC.selectedMovie = model
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }.disposed(by: bag)
@@ -83,6 +84,7 @@ class ContentViewController: UIViewController  {
         collectionViewTopRelated.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
             detailsVC.selectedMovie = model
+            detailsVC.favMovieID = model.id
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }.disposed(by: bag)
     }
@@ -96,6 +98,7 @@ class ContentViewController: UIViewController  {
         
         collectionViewUpcoming.rx.modelSelected(Movie.self).bind{ model in
             let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+            detailsVC.favMovieID = model.id
             detailsVC.selectedMovie = model
             self.navigationController?.pushViewController(detailsVC, animated: true)
         }.disposed(by: bag)
