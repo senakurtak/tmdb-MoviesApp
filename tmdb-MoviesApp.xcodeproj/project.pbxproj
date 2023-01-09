@@ -14,6 +14,7 @@
 		B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3B0329644DBD00209189 /* FavoriteMovie.swift */; };
 		B3C95FE9296B77CC0019202A /* RealmInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C95FE8296B77CC0019202A /* RealmInt.swift */; };
 		B3C96027296BF1230019202A /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C96026296BF1230019202A /* DataHandler.swift */; };
+		B3C9602B296C2C080019202A /* FetchFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9602A296C2C080019202A /* FetchFavorite.swift */; };
 		B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */; };
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
@@ -55,6 +56,7 @@
 		B34B3B0329644DBD00209189 /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
 		B3C95FE8296B77CC0019202A /* RealmInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInt.swift; sourceTree = "<group>"; };
 		B3C96026296BF1230019202A /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		B3C9602A296C2C080019202A /* FetchFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFavorite.swift; sourceTree = "<group>"; };
 		B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C96026296BF1230019202A /* DataHandler.swift */,
+				B3C9602A296C2C080019202A /* FetchFavorite.swift */,
 				B34999D12965ACB100425611 /* RealmSwift */,
 				B3D61AF6295BA8EB00BB94A9 /* CoreData */,
 			);
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C9602B296C2C080019202A /* FetchFavorite.swift in Sources */,
 				F515F62E2955E24F000766FB /* TabBarController.swift in Sources */,
 				B3D61AF8295BA8FF00BB94A9 /* CoreDataHandler.swift in Sources */,
 				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,

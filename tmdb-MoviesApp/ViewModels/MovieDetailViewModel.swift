@@ -10,26 +10,41 @@ import UIKit
 import CoreData
 import RealmSwift
 
-class MovieDetailViewModel : ObservableObject {
+class MovieDetailViewModel : ObservableObject, DataHandler {
+        
+    func saveLocalData(movie: Movie) {
+        CoreDataHandler.shared.saveLocalData(movie: movie)
+        RealmHandler.shared.saveLocalData(selectedMovie: movie)
+
+    }
     
-//    var favArr : [Movie] = []
+    func deletLocaleData(movie: Movie) {
+        CoreDataHandler.shared.deletLocaleData(movie: movie)
+        RealmHandler.shared.deleteLocalData(selectedMovie: movie)
+    }
     
+    func fetchLocalData() {
+        CoreDataHandler.shared.fetchLocalData()
+        RealmHandler.shared.fetchLocalData()
+    }
+    
+    
+    // for separated functions before protocol using
     func saveDataToCoreData(movie: Movie){
         CoreDataHandler.shared.saveLocalData(movie: movie)
-//        self.favArr = CoreDataHandler.shared.savedArr
     }
     
     func deleteDataFromCoreData(movie: Movie){
         CoreDataHandler.shared.deletLocaleData(movie: movie)
-    
+        
     }
     
     func saveToRealmDataBase(movie: Movie){
-        RealmHandler.shared.setFavoriteMovie(selectedMovie: movie)
+        RealmHandler.shared.saveLocalData(selectedMovie: movie)
     }
     
     func deleteDataFromRealmDataBase(movie: Movie){
-        RealmHandler.shared.removeFromFavorites(selectedMovie: movie)
-
+        RealmHandler.shared.deleteLocalData(selectedMovie: movie)
+        
     }
 }

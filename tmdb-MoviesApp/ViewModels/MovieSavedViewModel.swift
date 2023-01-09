@@ -6,25 +6,35 @@
 //
 
 import Foundation
-import CoreData
 import UIKit
 
-class MovieSavedViewModel : ObservableObject {
+class MovieSavedViewModel : ObservableObject, FetchFavorite {
     
-    lazy public var favArr = [Movie]()
+    var favArr: [Movie] = []
     
-    func fetchCoreDataFavorites(tableView : UITableView) -> [Movie]{
+    func fetchFavorites(tableView: UITableView) -> [Movie] {
+        // her ikisi de birbirine eşit olacak??
         favArr = CoreDataHandler.shared.savedArr
-        tableView.reloadData()
-        return favArr
-    }
-    
-    func fetchRealmFavorites(tableView: UITableView) -> [Movie]{
         favArr = RealmHandler.shared.savedArray
         tableView.reloadData()
         return favArr
     }
     
     
-    
+        
 }
+
+
+/*lazy public var favArr = [Movie]()
+
+func fetchCoreDataFavorites(tableView : UITableView) -> [Movie]{
+    favArr = CoreDataHandler.shared.savedArr
+    tableView.reloadData()
+    return favArr
+}
+
+func fetchRealmFavorites(tableView: UITableView) -> [Movie]{
+    favArr = RealmHandler.shared.savedArray
+    tableView.reloadData()
+    return favArr
+}*/

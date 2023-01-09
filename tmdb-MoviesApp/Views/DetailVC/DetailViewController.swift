@@ -60,14 +60,26 @@ class DetailViewController: UIViewController {
          }
          */
         favoriteCheck.toggle()
-        // Realm
-        if RealmHandler.shared.savedArray.contains(where: {$0.id == selectedMovie!.id}){
-            detailViewModel.deleteDataFromRealmDataBase(movie: selectedMovie!)
+    
+        if savedViewModel.favArr.contains(where: {$0.id == selectedMovie!.id}){
+            detailViewModel.deletLocaleData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
+
         } else {
-            detailViewModel.saveToRealmDataBase(movie: selectedMovie!)
+            detailViewModel.saveLocalData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+
         }
+        
+        // protocol kullanmadan önce çalıştırdığım kod bloğu
+        // Realm
+//        if RealmHandler.shared.savedArray.contains(where: {$0.id == selectedMovie!.id}){
+//            detailViewModel.deleteDataFromRealmDataBase(movie: selectedMovie!)
+//            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
+//        } else {
+//            detailViewModel.saveToRealmDataBase(movie: selectedMovie!)
+//            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        }
     }
     
     func setUpMovie(){

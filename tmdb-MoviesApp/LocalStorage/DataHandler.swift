@@ -14,5 +14,3 @@ protocol DataHandler {
     func fetchLocalData()
     
 }
-
-

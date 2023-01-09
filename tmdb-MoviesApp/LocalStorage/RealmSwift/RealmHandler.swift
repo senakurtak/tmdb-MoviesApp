@@ -20,7 +20,7 @@ final class RealmHandler{
     let realm = try! Realm()
     
     // MARK: Set Movie as favorite
-    func setFavoriteMovie(selectedMovie : Movie){
+    func saveLocalData(selectedMovie : Movie){
         
         do{
             try realm.write {
@@ -43,7 +43,7 @@ final class RealmHandler{
     }
     
     // MARK: Remove Movie from favorites
-    func removeFromFavorites(selectedMovie : Movie){
+    func deleteLocalData(selectedMovie : Movie){
         var id = selectedMovie.id
         guard let obj = self.realm.objects(FavoriteMovie.self).where({$0.id == id}).first else {return}
         do{
@@ -56,17 +56,8 @@ final class RealmHandler{
         }
       fetchLocalData()
     }
-    
-    // MARK: fetch saved movies
-    
-    //    func fetchLocalFavorites(){
-    //        self.realm.beginWrite()
-    //        let savedMovies = self.realm.objects(FavoriteMovie.self)
-    //        self.savedArray.removeAll()
-    //        try! self.realm.commitWrite()
-    //    }
-    
-    
+        
+    // MARK: Fetch Favorite Movie from saved realm database
     func fetchLocalData(){
         
         let savedMovies = self.realm.objects(FavoriteMovie.self)
@@ -87,10 +78,4 @@ final class RealmHandler{
             }
         }
     }
-    // MARK: check movie exist in local DB
-    //    func isMovieExistInFavorites(selectedMovie : Movie) -> Bool{
-    //        var id = selectedMovie.id
-    //        guard realm.objects(FavoriteMovie.self).where({$0.id == id}).first != nil else {return false}
-    //        return true
-    //    }
 }

@@ -22,7 +22,8 @@ class SavedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.favArr = savedViewModel.fetchRealmFavorites(tableView: savedMovieTableView)
+        
+        self.favArr = savedViewModel.fetchFavorites(tableView: savedMovieTableView)
         
     }
     
