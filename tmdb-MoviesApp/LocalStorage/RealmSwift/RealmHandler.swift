@@ -39,6 +39,7 @@ final class RealmHandler{
         }catch{
             print("error on saveFavourite function")
         }
+        fetchLocalData()
     }
     
     // MARK: Remove Movie from favorites
@@ -53,12 +54,43 @@ final class RealmHandler{
         }catch{
             print(error.localizedDescription)
         }
+      fetchLocalData()
     }
     
-    // MARK: check movie exist in local DB
-    func isMovieExistInFavorites(selectedMovie : Movie) -> Bool{
-        var id = selectedMovie.id
-        guard realm.objects(FavoriteMovie.self).where({$0.id == id}).first != nil else {return false}
-        return true
+    // MARK: fetch saved movies
+    
+    //    func fetchLocalFavorites(){
+    //        self.realm.beginWrite()
+    //        let savedMovies = self.realm.objects(FavoriteMovie.self)
+    //        self.savedArray.removeAll()
+    //        try! self.realm.commitWrite()
+    //    }
+    
+    
+    func fetchLocalData(){
+        
+        let savedMovies = self.realm.objects(FavoriteMovie.self)
+        
+        for item in savedMovies {
+            if !savedArray.contains(where: {$0.id == item.value(forKey: "id") as! Int}){
+                let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
+                                     id: item.value(forKey: "id") as! Int,
+                                     overview: item.value(forKey: "overview") as! String,
+                                     popularity: item.value(forKey: "popularity") as! Double,
+                                     posterPath: item.value(forKey: "posterPath") as? String,
+                                     releaseDate: item.value(forKey: "releaseDate") as? String,
+                                     title: item.value(forKey: "title") as! String,
+                                     voteAverage: item.value(forKey: "voteAverage") as! Double)
+                savedArray.append(savedObj)
+            } else {
+                print("already added")
+            }
+        }
     }
+    // MARK: check movie exist in local DB
+    //    func isMovieExistInFavorites(selectedMovie : Movie) -> Bool{
+    //        var id = selectedMovie.id
+    //        guard realm.objects(FavoriteMovie.self).where({$0.id == id}).first != nil else {return false}
+    //        return true
+    //    }
 }

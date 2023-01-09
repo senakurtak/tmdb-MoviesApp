@@ -15,12 +15,12 @@ class MovieDetailViewModel : ObservableObject {
 //    var favArr : [Movie] = []
     
     func saveDataToCoreData(movie: Movie){
-        CoreDataHandler.shared.saveToCoreData(movie: movie)
+        CoreDataHandler.shared.saveLocalData(movie: movie)
 //        self.favArr = CoreDataHandler.shared.savedArr
     }
     
     func deleteDataFromCoreData(movie: Movie){
-        CoreDataHandler.shared.deleteData(movie: movie)
+        CoreDataHandler.shared.deletLocaleData(movie: movie)
     
     }
     

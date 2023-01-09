@@ -13,6 +13,7 @@
 		B34B3AFF29642B7F00209189 /* MovieSavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */; };
 		B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3B0329644DBD00209189 /* FavoriteMovie.swift */; };
 		B3C95FE9296B77CC0019202A /* RealmInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C95FE8296B77CC0019202A /* RealmInt.swift */; };
+		B3C96027296BF1230019202A /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C96026296BF1230019202A /* DataHandler.swift */; };
 		B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */; };
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
@@ -53,6 +54,7 @@
 		B34B3AFE29642B7F00209189 /* MovieSavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSavedViewModel.swift; sourceTree = "<group>"; };
 		B34B3B0329644DBD00209189 /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
 		B3C95FE8296B77CC0019202A /* RealmInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmInt.swift; sourceTree = "<group>"; };
+		B3C96026296BF1230019202A /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		B3AA72AB29684BDF009DAAE3 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
+				B3C96026296BF1230019202A /* DataHandler.swift */,
 				B34999D12965ACB100425611 /* RealmSwift */,
 				B3D61AF6295BA8EB00BB94A9 /* CoreData */,
 			);
@@ -368,6 +371,7 @@
 				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,
 				B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */,
 				F515F6252955E24F000766FB /* NetworkManager.swift in Sources */,
+				B3C96027296BF1230019202A /* DataHandler.swift in Sources */,
 				F515F5F32955E232000766FB /* AppDelegate.swift in Sources */,
 				F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */,
 				F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */,

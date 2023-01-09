@@ -15,7 +15,7 @@ final class CoreDataHandler{
     
     var savedArr = [Movie]()
     
-    func saveToCoreData(movie: Movie){
+    func saveLocalData(movie: Movie){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Movies", in: context)!
@@ -36,10 +36,10 @@ final class CoreDataHandler{
         } catch {
             print(error)
         }
-        fetchData()
+        fetchLocalData()
     }
     
-    func deleteData(movie: Movie){
+    func deletLocaleData(movie: Movie){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appDelegate.persistentContainer.viewContext
         
@@ -61,10 +61,10 @@ final class CoreDataHandler{
         } catch {
             print(error)
         }
-        fetchData()
+        fetchLocalData()
     }
     
-    func fetchData(){
+    func fetchLocalData(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movies")
