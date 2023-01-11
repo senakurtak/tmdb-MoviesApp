@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
-
+/*
 final class CoreDataHandler{
     
     static let shared = CoreDataHandler()
@@ -94,3 +94,4 @@ final class CoreDataHandler{
         CoreDataHandler.shared.savedArr = savedArr
     }
 }
+*/

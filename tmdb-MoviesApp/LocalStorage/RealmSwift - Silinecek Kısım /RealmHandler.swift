@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-
+/*
 final class RealmHandler{
     
     static let shared = RealmHandler()
@@ -79,3 +79,4 @@ final class RealmHandler{
         }
     }
 }
+*/

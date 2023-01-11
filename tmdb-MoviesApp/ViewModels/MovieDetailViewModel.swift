@@ -10,27 +10,30 @@ import UIKit
 import CoreData
 import RealmSwift
 
-class MovieDetailViewModel : ObservableObject, DataHandler {
+class MovieDetailViewModel : ObservableObject {
+    
+    var favorties = [Movie]()
         
-    func saveLocalData(movie: Movie) {
-        CoreDataHandler.shared.saveLocalData(movie: movie)
-        RealmHandler.shared.saveLocalData(selectedMovie: movie)
-
+    var service : DataService?
+    
+    init(service: DataService? = nil) {
+        self.service = service
     }
     
-    func deletLocaleData(movie: Movie) {
-        CoreDataHandler.shared.deletLocaleData(movie: movie)
-        RealmHandler.shared.deleteLocalData(selectedMovie: movie)
+    func saveToLocalData(movie: Movie) {
+        service?.saveLocalData(movie: movie)
     }
     
-    func fetchLocalData() {
-        CoreDataHandler.shared.fetchLocalData()
-        RealmHandler.shared.fetchLocalData()
+    func deleteToLocaleData(movie: Movie) {
+        service?.deleteLocaleData(movie: movie)
     }
     
+    func fetchToLocalData() {
+        favorties = service?.fetchLocalData() ?? [Movie]()
+    }
     
     // for separated functions before protocol using
-    func saveDataToCoreData(movie: Movie){
+    /* func saveDataToCoreData(movie: Movie){
         CoreDataHandler.shared.saveLocalData(movie: movie)
     }
     
@@ -47,4 +50,5 @@ class MovieDetailViewModel : ObservableObject, DataHandler {
         RealmHandler.shared.deleteLocalData(selectedMovie: movie)
         
     }
+*/
 }

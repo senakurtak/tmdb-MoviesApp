@@ -27,16 +27,12 @@ class DetailViewController: UIViewController {
     let realm = try! Realm()
     
     var selectedMovie : Movie?
-    
-    var detailViewModel = MovieDetailViewModel()
-    
-    var savedViewModel = MovieSavedViewModel()
-    
+        
     var favoriteCheck : Bool = false
     
-    var realmFavMovie : [Movie] = []
-    
     var favMovieID : Int = 100000
+    
+    var detailViewModel = MovieDetailViewModel(service: RealmDataService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +40,23 @@ class DetailViewController: UIViewController {
     }
     
     func configure(){
+        detailViewModel.fetchToLocalData()
         checkFav()
         setUpMovie()
     }
     
     @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
+        
+        favoriteCheck.toggle()
+        
+        if detailViewModel.favorties.contains(where: {$0.id == selectedMovie!.id}){
+            detailViewModel.deleteToLocaleData(movie: selectedMovie!)
+            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else {
+            detailViewModel.saveToLocalData(movie: selectedMovie!)
+            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
         // CoreData
         /* if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
          detailViewModel.deleteDataFromCoreData(movie: selectedMovie!)
@@ -59,18 +67,6 @@ class DetailViewController: UIViewController {
          buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
          }
          */
-        favoriteCheck.toggle()
-    
-        if savedViewModel.favArr.contains(where: {$0.id == selectedMovie!.id}){
-            detailViewModel.deletLocaleData(movie: selectedMovie!)
-            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-
-        } else {
-            detailViewModel.saveLocalData(movie: selectedMovie!)
-            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-
-        }
-        
         // protocol kullanmadan önce çalıştırdığım kod bloğu
         // Realm
 //        if RealmHandler.shared.savedArray.contains(where: {$0.id == selectedMovie!.id}){
@@ -98,12 +94,13 @@ class DetailViewController: UIViewController {
     }
     
     func checkFav(){
-        if RealmHandler.shared.savedArray.contains(where: {$0.id == selectedMovie!.id}){
+        if detailViewModel.favorties.contains(where: {$0.id == selectedMovie!.id}){
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            print("check işlemleri doğru çalışıyor")
+            print("check işlemleri doğru çalışıyor, movie kayıtlı")
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-            
+            print("check işlemleri doğru çalışıyor, movie kayıtlı değil")
+
         }
     }
     // CoreData'ya göre check işlemleri
@@ -112,8 +109,6 @@ class DetailViewController: UIViewController {
     //        }else{
     //            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
     //        }
-    
-    
     func convertDateFormat(dateString: String) -> String {
         // Create a date formatter
         let formatter = DateFormatter()

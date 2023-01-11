@@ -29,17 +29,7 @@ class ContentViewController: UIViewController  {
     let viewModel = MovieViewModel()
     
     var bag = DisposeBag()
-    
-    var movieList : [Movie] = []
-    var movieListTopRelated : [Movie] = []
-    var movieListUpComing : [Movie] = []
-    
-    
-    
-//    enum Section : Int {
-//        case popular = 0
-//    }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: (13/255), green: (37/255), blue: (63/255), alpha: (0.0))
     }
