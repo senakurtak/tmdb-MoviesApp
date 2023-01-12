@@ -31,24 +31,4 @@ class MovieDetailViewModel : ObservableObject {
     func fetchToLocalData() {
         favorties = service?.fetchLocalData() ?? [Movie]()
     }
-    
-    // for separated functions before protocol using
-    /* func saveDataToCoreData(movie: Movie){
-        CoreDataHandler.shared.saveLocalData(movie: movie)
-    }
-    
-    func deleteDataFromCoreData(movie: Movie){
-        CoreDataHandler.shared.deletLocaleData(movie: movie)
-        
-    }
-    
-    func saveToRealmDataBase(movie: Movie){
-        RealmHandler.shared.saveLocalData(selectedMovie: movie)
-    }
-    
-    func deleteDataFromRealmDataBase(movie: Movie){
-        RealmHandler.shared.deleteLocalData(selectedMovie: movie)
-        
-    }
-*/
 }

@@ -36,7 +36,6 @@ struct RealmDataService : DataService {
         }catch{
             print("error on saveFavourite function")
         }
-//        fetchLocalData()
     }
     
     // MARK: Remove Movie from favorites
@@ -51,11 +50,9 @@ struct RealmDataService : DataService {
         }catch{
             print(error.localizedDescription)
         }
-//        fetchLocalData()
     }
     
     // MARK: Fetch Favorite Movie from saved RealmServices
-    
     func fetchLocalData() -> [Movie]{
         self.realm.beginWrite()
         let savedMovies = self.realm.objects(FavoriteMovie.self)
@@ -67,22 +64,3 @@ struct RealmDataService : DataService {
         return result
     }
 }
-
-
-//        for item in savedMovies {
-//
-//            if !savedMovies.contains(where: {$0.id != item.value(forKey: "id") as! Int}){
-//
-//                let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as! String,
-//                                     id: item.value(forKey: "id") as! Int,
-//                                     overview: item.value(forKey: "overview") as! String,
-//                                     popularity: item.value(forKey: "popularity") as! Double,
-//                                     posterPath: item.value(forKey: "posterPath") as? String,
-//                                     releaseDate: item.value(forKey: "releaseDate") as? String,
-//                                     title: item.value(forKey: "title") as! String,
-//                                     voteAverage: item.value(forKey: "voteAverage") as! Double)
-//
-//            } else {
-//                print("already added")
-//            }
-//        }

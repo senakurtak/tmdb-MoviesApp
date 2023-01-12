@@ -10,13 +10,12 @@
 //import CoreData
 //
 //class CoreDataService: DataService{
-//    
 //    var savedArr = [Movie]()
 //    
 //    static let shared = CoreDataService()
-//    
+//        
 //    // MARK: Set Movie as favorite
-//    
+//
 //    func saveLocalData(movie: Movie) {
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 //        let context = appDelegate.persistentContainer.viewContext
@@ -42,7 +41,7 @@
 //    }
 //    
 //    // MARK: Remove Movie from favorites
-//    
+//
 //    func deleteLocaleData(movie: Movie) {
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 //        let context = appDelegate.persistentContainer.viewContext
@@ -66,27 +65,23 @@
 //        }
 //        fetchLocalData()
 //    }
-//    
+// 
 //    // MARK: Fetch Favorite Movie from saved CoreData database
-//    
+//
 //    func fetchLocalData() -> [Movie] {
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//            
-//            return []
-//            
-//        }
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
 //        let context = appDelegate.persistentContainer.viewContext
 //        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movies")
 //        do{
 //            let fetchResults = try context.fetch(fetchRequest)
 //            for item in fetchResults {
 //                if !savedArr.contains(where: {$0.id == item.value(forKey: "id") as! Int}){
-//                    let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as! String,
+//                    let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
 //                                         id: item.value(forKey: "id") as! Int,
 //                                         overview: item.value(forKey: "overview") as! String,
 //                                         popularity: item.value(forKey: "popularity") as! Double,
-//                                         posterPath: item.value(forKey: "posterPath") as! String,
-//                                         releaseDate: item.value(forKey: "releaseDate") as! String,
+//                                         posterPath: item.value(forKey: "posterPath") as? String,
+//                                         releaseDate: item.value(forKey: "releaseDate") as? String,
 //                                         title: item.value(forKey: "title") as! String,
 //                                         voteAverage: item.value(forKey: "voteAverage") as! Double)
 //                } else {
@@ -97,8 +92,9 @@
 //        } catch {
 //            print(error)
 //        }
+//        
 //        CoreDataService.shared.savedArr = savedArr
-//        return savedArr
+//
 //    }
 //}
 //

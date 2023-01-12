@@ -56,29 +56,10 @@ class DetailViewController: UIViewController {
             detailViewModel.saveToLocalData(movie: selectedMovie!)
             buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
-        
-        // CoreData
-        /* if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-         detailViewModel.deleteDataFromCoreData(movie: selectedMovie!)
-         buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-         } else {
-         detailViewModel.saveDataToCoreData(movie: selectedMovie!)
-         //            CoreDataHandler.shared.saveToCoreData(movie: selectedMovie!)
-         buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-         }
-         */
-        // protocol kullanmadan önce çalıştırdığım kod bloğu
-        // Realm
-//        if RealmHandler.shared.savedArray.contains(where: {$0.id == selectedMovie!.id}){
-//            detailViewModel.deleteDataFromRealmDataBase(movie: selectedMovie!)
-//            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-//        } else {
-//            detailViewModel.saveToRealmDataBase(movie: selectedMovie!)
-//            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        }
     }
     
     func setUpMovie(){
+        
         if let movies = selectedMovie{
             titleLabel.text = movies.title
             overviewTextView.text = movies.overview
@@ -103,33 +84,15 @@ class DetailViewController: UIViewController {
 
         }
     }
-    // CoreData'ya göre check işlemleri
-    //        if CoreDataHandler.shared.savedArr.contains(where: {$0.id == selectedMovie!.id}){
-    //            buttonFav.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-    //        }else{
-    //            buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
-    //        }
     func convertDateFormat(dateString: String) -> String {
-        // Create a date formatter
         let formatter = DateFormatter()
-        
-        // Set the input format for the date formatter
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "en_US")
-        
-        
-        // Convert the input string to a date object
         guard let date = formatter.date(from: dateString) else {
             return "Invalid date"
         }
-        
-        // Set the output format for the date formatter
         formatter.dateFormat = "dd MMM yyyy"
-        
-        // Convert the date object to a string in the desired output format
         let convertedDateString = formatter.string(from: date)
-        
         return convertedDateString
     }
-    
 }

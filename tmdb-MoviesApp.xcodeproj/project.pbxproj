@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B34999D52965ACE900425611 /* RealmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34999D42965ACE900425611 /* RealmHandler.swift */; };
 		B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */; };
 		B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B3B0329644DBD00209189 /* FavoriteMovie.swift */; };
 		B3C90305296E8ECD00BC22F8 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C90304296E8ECD00BC22F8 /* CoreDataService.swift */; };
@@ -18,10 +17,8 @@
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
 		B3D61AF5295BA00E00BB94A9 /* SavedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AF3295BA00E00BB94A9 /* SavedViewController.xib */; };
-		B3D61AF8295BA8FF00BB94A9 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF7295BA8FF00BB94A9 /* CoreDataHandler.swift */; };
 		F515F5F32955E232000766FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F5F22955E232000766FB /* AppDelegate.swift */; };
 		F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F5F42955E232000766FB /* SceneDelegate.swift */; };
-		F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */; };
 		F515F5FF2955E235000766FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F515F5FE2955E235000766FB /* Assets.xcassets */; };
 		F515F6022955E235000766FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515F6002955E235000766FB /* LaunchScreen.storyboard */; };
 		F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515F60A2955E24D000766FB /* MovieViewModel.swift */; };
@@ -48,7 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B34999D42965ACE900425611 /* RealmHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHandler.swift; sourceTree = "<group>"; };
 		B34B3AFA296402FA00209189 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		B34B3B0329644DBD00209189 /* FavoriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovie.swift; sourceTree = "<group>"; };
 		B3C90304296E8ECD00BC22F8 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -59,11 +55,9 @@
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		B3D61AF3295BA00E00BB94A9 /* SavedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedViewController.xib; sourceTree = "<group>"; };
-		B3D61AF7295BA8FF00BB94A9 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		F515F5EF2955E232000766FB /* tmdb-MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tmdb-MoviesApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F515F5F22955E232000766FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F515F5F42955E232000766FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F515F5FC2955E232000766FB /* tmdb_MoviesApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tmdb_MoviesApp.xcdatamodel; sourceTree = "<group>"; };
 		F515F5FE2955E235000766FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F515F6012955E235000766FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F515F6032955E235000766FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,20 +103,10 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		B34999D12965ACB100425611 /* RealmSwift - Silinecek Kısım  */ = {
-			isa = PBXGroup;
-			children = (
-				B34999D42965ACE900425611 /* RealmHandler.swift */,
-			);
-			path = "RealmSwift - Silinecek Kısım ";
-			sourceTree = "<group>";
-		};
 		B3AA72AB29684BDF009DAAE3 /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
 				B3C9030A296E90F100BC22F8 /* Services */,
-				B34999D12965ACB100425611 /* RealmSwift - Silinecek Kısım  */,
-				B3D61AF6295BA8EB00BB94A9 /* CoreData  - Silinecek Kısım  */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -146,15 +130,6 @@
 				B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */,
 			);
 			path = SavedVC;
-			sourceTree = "<group>";
-		};
-		B3D61AF6295BA8EB00BB94A9 /* CoreData  - Silinecek Kısım  */ = {
-			isa = PBXGroup;
-			children = (
-				F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */,
-				B3D61AF7295BA8FF00BB94A9 /* CoreDataHandler.swift */,
-			);
-			path = "CoreData  - Silinecek Kısım ";
 			sourceTree = "<group>";
 		};
 		F515F5E62955E232000766FB = {
@@ -369,7 +344,6 @@
 			files = (
 				B3C90309296E901500BC22F8 /* DataService.swift in Sources */,
 				F515F62E2955E24F000766FB /* TabBarController.swift in Sources */,
-				B3D61AF8295BA8FF00BB94A9 /* CoreDataHandler.swift in Sources */,
 				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,
 				B3C90305296E8ECD00BC22F8 /* CoreDataService.swift in Sources */,
 				B3C9030E296EDF1100BC22F8 /* MovieSavedViewModel.swift in Sources */,
@@ -377,14 +351,12 @@
 				B34B3AFB296402FA00209189 /* MovieDetailViewModel.swift in Sources */,
 				F515F6272955E24F000766FB /* Movie.swift in Sources */,
 				B34B3B0429644DBD00209189 /* FavoriteMovie.swift in Sources */,
-				F515F5FD2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld in Sources */,
 				B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */,
 				F515F6252955E24F000766FB /* NetworkManager.swift in Sources */,
 				F515F5F32955E232000766FB /* AppDelegate.swift in Sources */,
 				F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */,
 				F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */,
 				F515F6292955E24F000766FB /* ContentViewController.swift in Sources */,
-				B34999D52965ACE900425611 /* RealmHandler.swift in Sources */,
 				F515F6262955E24F000766FB /* API.swift in Sources */,
 				F515F6242955E24F000766FB /* Constants.swift in Sources */,
 				F515F62F2955E24F000766FB /* DetailViewController.swift in Sources */,
@@ -676,19 +648,6 @@
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		F515F5FB2955E232000766FB /* tmdb_MoviesApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F515F5FC2955E232000766FB /* tmdb_MoviesApp.xcdatamodel */,
-			);
-			currentVersion = F515F5FC2955E232000766FB /* tmdb_MoviesApp.xcdatamodel */;
-			path = tmdb_MoviesApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F515F5E72955E232000766FB /* Project object */;
 }
