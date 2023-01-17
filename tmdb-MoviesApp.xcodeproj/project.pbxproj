@@ -13,6 +13,8 @@
 		B3C90307296E8ED800BC22F8 /* RealmDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C90306296E8ED800BC22F8 /* RealmDataService.swift */; };
 		B3C90309296E901500BC22F8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C90308296E901500BC22F8 /* DataService.swift */; };
 		B3C9030E296EDF1100BC22F8 /* MovieSavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9030D296EDF1100BC22F8 /* MovieSavedViewModel.swift */; };
+		B3C90310297182B300BC22F8 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9030F297182B300BC22F8 /* MovieResponse.swift */; };
+		B3C9031329755FE000BC22F8 /* Movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3C9031129755FE000BC22F8 /* Movies.xcdatamodeld */; };
 		B3D61AF0295B9D6500BB94A9 /* SavedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */; };
 		B3D61AF1295B9D6500BB94A9 /* SavedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */; };
 		B3D61AF4295BA00E00BB94A9 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */; };
@@ -51,6 +53,8 @@
 		B3C90306296E8ED800BC22F8 /* RealmDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataService.swift; sourceTree = "<group>"; };
 		B3C90308296E901500BC22F8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B3C9030D296EDF1100BC22F8 /* MovieSavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSavedViewModel.swift; sourceTree = "<group>"; };
+		B3C9030F297182B300BC22F8 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		B3C9031229755FE000BC22F8 /* Movie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie.xcdatamodel; sourceTree = "<group>"; };
 		B3D61AEE295B9D6500BB94A9 /* SavedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTableViewCell.swift; sourceTree = "<group>"; };
 		B3D61AEF295B9D6500BB94A9 /* SavedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedTableViewCell.xib; sourceTree = "<group>"; };
 		B3D61AF2295BA00E00BB94A9 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				B3C90308296E901500BC22F8 /* DataService.swift */,
 				B3C90306296E8ED800BC22F8 /* RealmDataService.swift */,
 				B3C90304296E8ECD00BC22F8 /* CoreDataService.swift */,
+				B3C9031129755FE000BC22F8 /* Movies.xcdatamodeld */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				F515F6102955E24E000766FB /* Movie.swift */,
+				B3C9030F297182B300BC22F8 /* MovieResponse.swift */,
 				B31F8B9E296B72BB0087E1BD /* Realm */,
 			);
 			path = Models;
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C90309296E901500BC22F8 /* DataService.swift in Sources */,
+				B3C90310297182B300BC22F8 /* MovieResponse.swift in Sources */,
 				F515F62E2955E24F000766FB /* TabBarController.swift in Sources */,
 				F515F6232955E24F000766FB /* MovieViewModel.swift in Sources */,
 				B3C90305296E8ECD00BC22F8 /* CoreDataService.swift in Sources */,
@@ -357,6 +364,7 @@
 				F515F62A2955E24F000766FB /* CustomCollectionViewCell.swift in Sources */,
 				F515F5F52955E232000766FB /* SceneDelegate.swift in Sources */,
 				F515F6292955E24F000766FB /* ContentViewController.swift in Sources */,
+				B3C9031329755FE000BC22F8 /* Movies.xcdatamodeld in Sources */,
 				F515F6262955E24F000766FB /* API.swift in Sources */,
 				F515F6242955E24F000766FB /* Constants.swift in Sources */,
 				F515F62F2955E24F000766FB /* DetailViewController.swift in Sources */,
@@ -648,6 +656,19 @@
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B3C9031129755FE000BC22F8 /* Movies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3C9031229755FE000BC22F8 /* Movie.xcdatamodel */,
+			);
+			currentVersion = B3C9031229755FE000BC22F8 /* Movie.xcdatamodel */;
+			path = Movies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F515F5E72955E232000766FB /* Project object */;
 }

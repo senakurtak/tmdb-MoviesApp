@@ -15,10 +15,9 @@ struct RealmDataService : DataService {
     
     let realm = try! Realm()
     
-    var savedArr = [Movie]()
+//    var savedArr = [Movie]()
     
     // MARK: Set Movie as favorite
-    
     func saveLocalData(movie: Movie) {
         do{
             try realm.write {
@@ -39,7 +38,6 @@ struct RealmDataService : DataService {
     }
     
     // MARK: Remove Movie from favorites
-    
     func deleteLocaleData(movie: Movie) {
         var id = movie.id
         guard let obj = self.realm.objects(FavoriteMovie.self).where({$0.id == id}).first else {return}
@@ -60,7 +58,6 @@ struct RealmDataService : DataService {
         let result = Array(savedMovies).map { item in
                 Movie(backdropPath: item.backdropPath, id: item.id, overview: item.overview, popularity: item.popularity, posterPath: item.posterPath, releaseDate: item.releaseDate, title: item.title, voteAverage: item.voteAverage)
         }
-       
         return result
     }
 }

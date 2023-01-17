@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct MovieResponse: Codable{
-    let results : [Movie]
-}
-
 struct Movie: Codable {
    var backdropPath: String?
    var id: Int

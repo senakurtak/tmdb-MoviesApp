@@ -15,14 +15,18 @@ class SavedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        savedViewModel.fetchToLocalData(tableView: savedMovieTableView)
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        savedViewModel.fetchToLocalData(tableView: savedMovieTableView)
     }
     
     func configure(){
         savedMovieTableView.register(UINib(nibName: "SavedTableViewCell", bundle: nil), forCellReuseIdentifier: "SavedTableViewCellID")
         savedMovieTableView.delegate = self
         savedMovieTableView.dataSource = self
+        
     }
 }
 
