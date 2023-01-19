@@ -18,10 +18,7 @@ class MovieSavedViewModel : ObservableObject{
         self.service = service
     }
     
-    func fetchToLocalData(tableView: UITableView) -> [Movie]{
-        
+    func fetchToLocalData(){
         favorties = service?.fetchLocalData() ?? []
-        tableView.reloadData()
-        return favorties
     }
 }

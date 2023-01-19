@@ -19,7 +19,8 @@ class SavedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        savedViewModel.fetchToLocalData(tableView: savedMovieTableView)
+        savedViewModel.fetchToLocalData()
+        savedMovieTableView.reloadData()
     }
     
     func configure(){

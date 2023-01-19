@@ -23,17 +23,14 @@ class MovieDetailViewModel : ObservableObject {
     func saveToLocalData(movie: Movie) {
         service?.saveLocalData(movie: movie)
         fetchToLocalData()
-//        favorties = service?.fetchLocalData() ?? [Movie]()
     }
     
     func deleteToLocaleData(movie: Movie) {
         service?.deleteLocaleData(movie: movie)
         fetchToLocalData()
-//        favorties = service?.fetchLocalData() ?? [Movie]()
     }
     
     func fetchToLocalData() {
-        
         favorties = service?.fetchLocalData() ?? [Movie]()
     }
 }
