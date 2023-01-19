@@ -13,14 +13,24 @@ final class CoreDataHandler : DataService{
     
     var savedArr = [Movie]()
     
+    
     static let shared = CoreDataHandler()
+    
+    var fetchResults: [Movie] = []
+    
     
     // MARK: Set Movie as favorite
     func saveLocalData(movie: Movie) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Movies", in: context)!
-        let item = NSManagedObject(entity: entity, insertInto: context)
+        let container = NSPersistentContainer(name: "Movies")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Movies", in: container.viewContext)!
+        let item = NSManagedObject(entity: entity, insertInto: container.viewContext)
         
         item.setValuesForKeys([
             "backdropPath" : movie.backdropPath as Any,
@@ -33,7 +43,7 @@ final class CoreDataHandler : DataService{
             "voteAverage": movie.voteAverage
         ])
         do {
-            try context.save()
+            try container.viewContext.save()
         } catch {
             print(error)
         }
@@ -41,24 +51,27 @@ final class CoreDataHandler : DataService{
     
     // MARK: Remove Movie from favorites
     func deleteLocaleData(movie: Movie) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let context = appDelegate.persistentContainer.viewContext
-        
+        let container = NSPersistentContainer(name: "Movies")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
         let fetchRequest = NSFetchRequest<Movies>(entityName: "Movies")
         let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        let objects = try! context.fetch(fetchRequest)
+        let objects = try! container.viewContext.fetch(fetchRequest)
         for obj in objects{
             if obj.id == movie.id{
-                context.delete(obj)
+                container.viewContext.delete(obj)
                 if let index = savedArr.firstIndex(where: {$0.id == obj.id}){
                     savedArr.remove(at: index)
                 }
             }
         }
         do {
-            try context.save()
+            try container.viewContext.save()
         } catch {
             print(error)
         }
@@ -66,31 +79,29 @@ final class CoreDataHandler : DataService{
     
     // MARK: Fetch Favorite Movie from saved RealmServices
     func fetchLocalData() -> [Movie] {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movies")
-        do{
-            let fetchResults = try context.fetch(fetchRequest)
-            for item in fetchResults {
-                if !savedArr.contains(where: {$0.id == item.value(forKey: "id") as! Int}){
-                    let savedObj = Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
-                                         id: item.value(forKey: "id") as! Int,
-                                         overview: item.value(forKey: "overview") as! String,
-                                         popularity: item.value(forKey: "popularity") as! Double,
-                                         posterPath: item.value(forKey: "posterPath") as? String,
-                                         releaseDate: item.value(forKey: "releaseDate") as? String,
-                                         title: item.value(forKey: "title") as! String,
-                                         voteAverage: item.value(forKey: "voteAverage") as! Double)
-                    savedArr.append(savedObj)
-                } else {
-                    print("already added")
-                }
+        let container = NSPersistentContainer(name: "Movies")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            print("added final")
+        })
+        do{
+            self.fetchResults = try container.viewContext.fetch(fetchRequest).map({ item in
+                Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
+                      id: item.value(forKey: "id") as! Int,
+                      overview: item.value(forKey: "overview") as! String,
+                      popularity: item.value(forKey: "popularity") as! Double,
+                      posterPath: item.value(forKey: "posterPath") as? String,
+                      releaseDate: item.value(forKey: "releaseDate") as? String,
+                      title: item.value(forKey: "title") as! String,
+                      voteAverage: item.value(forKey: "voteAverage") as! Double)
+            })
+                
         } catch {
             print(error)
         }
-        return savedArr
+        return fetchResults
     }
 }
 

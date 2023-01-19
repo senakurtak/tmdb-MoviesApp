@@ -11,7 +11,7 @@ class SavedViewController: UIViewController {
     
     @IBOutlet weak var savedMovieTableView: UITableView!
     
-    var savedViewModel = MovieSavedViewModel(service: RealmDataService())
+    var savedViewModel = MovieSavedViewModel(service: CoreDataHandler())
     
     override func viewDidLoad() {
         super.viewDidLoad()

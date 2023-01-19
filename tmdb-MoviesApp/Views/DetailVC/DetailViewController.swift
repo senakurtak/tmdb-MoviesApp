@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
     
     var favMovieID : Int = 100000
     
-    var detailViewModel = MovieDetailViewModel(service: RealmDataService())
+    var detailViewModel = MovieDetailViewModel(service: CoreDataHandler())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,10 @@ class DetailViewController: UIViewController {
         detailViewModel.fetchToLocalData()
         checkFav()
         setUpMovie()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        detailViewModel.fetchToLocalData()
     }
     
     @IBAction func didTappedFavouriteButton(_ sender: UIButton) {
