@@ -10,17 +10,12 @@ import UIKit
 import CoreData
 
 final class CoreDataHandler : DataService{
-    
-    var savedArr = [Movie]()
-    
-    
+        
     static let shared = CoreDataHandler()
-    
-    var fetchResults: [Movie] = []
-    
     
     // MARK: Set Movie as favorite
     func saveLocalData(movie: Movie) {
+        var movieFetchResult = fetchLocalData()
         let container = NSPersistentContainer(name: "Movies")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -51,6 +46,7 @@ final class CoreDataHandler : DataService{
     
     // MARK: Remove Movie from favorites
     func deleteLocaleData(movie: Movie) {
+        var movieFetchResult = fetchLocalData()
         let container = NSPersistentContainer(name: "Movies")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -65,8 +61,8 @@ final class CoreDataHandler : DataService{
         for obj in objects{
             if obj.id == movie.id{
                 container.viewContext.delete(obj)
-                if let index = savedArr.firstIndex(where: {$0.id == obj.id}){
-                    savedArr.remove(at: index)
+                if let index = movieFetchResult.firstIndex(where: {$0.id == obj.id}){
+                    movieFetchResult.remove(at: index)
                 }
             }
         }
@@ -81,13 +77,14 @@ final class CoreDataHandler : DataService{
     func fetchLocalData() -> [Movie] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Movies")
         let container = NSPersistentContainer(name: "Movies")
+        var fetchResults: [Movie] = []
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         do{
-            self.fetchResults = try container.viewContext.fetch(fetchRequest).map({ item in
+            fetchResults = try container.viewContext.fetch(fetchRequest).map({ item in
                 Movie(backdropPath: item.value(forKey: "backdropPath") as? String,
                       id: item.value(forKey: "id") as! Int,
                       overview: item.value(forKey: "overview") as! String,

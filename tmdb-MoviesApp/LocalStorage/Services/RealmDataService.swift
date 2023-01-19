@@ -14,9 +14,7 @@ struct RealmDataService : DataService {
     static let shared = RealmDataService()
     
     let realm = try! Realm()
-    
-//    var savedArr = [Movie]()
-    
+        
     // MARK: Set Movie as favorite
     func saveLocalData(movie: Movie) {
         do{
