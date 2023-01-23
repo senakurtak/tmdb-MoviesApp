@@ -6,47 +6,40 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SavedViewController: UIViewController {
+class SavedViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var savedMovieTableView: UITableView!
     
-    var savedViewModel = MovieSavedViewModel(service: CoreDataHandler())
+    var savedViewModel = MovieSavedViewModel(service: RealmDataService())
+    
+    var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        bindViewModel()
         savedViewModel.fetchToLocalData()
-        savedMovieTableView.reloadData()
     }
     
-    func configure(){
-        savedMovieTableView.register(UINib(nibName: "SavedTableViewCell", bundle: nil), forCellReuseIdentifier: "SavedTableViewCellID")
-        savedMovieTableView.delegate = self
-        savedMovieTableView.dataSource = self
-        
-    }
-}
 
-extension SavedViewController: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedViewModel.favorties.count
+    func configure(){
+        savedMovieTableView.register(UINib(nibName: "SavedTableViewCell", bundle: nil), forCellReuseIdentifier: "SavedTableViewCell")
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = savedMovieTableView.dequeueReusableCell(withIdentifier: "SavedTableViewCellID", for: indexPath) as! SavedTableViewCell
-        cell.setCell(movie: savedViewModel.favorties[indexPath.item])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        savedMovieTableView.deselectRow(at: indexPath, animated: true)
-        let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        detailsVC.selectedMovie = savedViewModel.favorties[indexPath.item]
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+    func bindViewModel(){
+        savedViewModel.favorties.bind(to: savedMovieTableView.rx.items(cellIdentifier: "SavedTableViewCell", cellType: SavedTableViewCell.self)){ row, item, cell in
+            cell.setCell(movie: item)
+            print(item)
+        }.disposed(by: bag)
+        
+        savedMovieTableView.rx.modelSelected(Movie.self).bind{ model in
+            let detailsVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+            detailsVC.favMovieID = model.id
+            detailsVC.selectedMovie = model
+            self.navigationController?.pushViewController(detailsVC, animated: true)
+        }.disposed(by: bag)
     }
 }

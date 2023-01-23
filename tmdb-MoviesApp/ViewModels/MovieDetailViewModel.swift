@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import CoreData
 import RealmSwift
+import RxSwift
+
 
 class MovieDetailViewModel : ObservableObject {
     

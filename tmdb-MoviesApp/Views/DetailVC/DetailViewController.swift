@@ -7,6 +7,9 @@
 import RealmSwift
 import UIKit
 import Foundation
+import RxSwift
+import RxCocoa
+
 
 class DetailViewController: UIViewController {
     
@@ -27,12 +30,14 @@ class DetailViewController: UIViewController {
     let realm = try! Realm()
     
     var selectedMovie : Movie?
-        
+    
     var favoriteCheck : Bool = false
     
     var favMovieID : Int = 100000
     
-    var detailViewModel = MovieDetailViewModel(service: CoreDataHandler())
+    var detailViewModel = MovieDetailViewModel(service: RealmDataService())
+    
+    var bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,20 +68,35 @@ class DetailViewController: UIViewController {
     }
     
     func setUpMovie(){
-        
-        if let movies = selectedMovie{
-            titleLabel.text = movies.title
-            overviewTextView.text = movies.overview
-            voteLabel.text = "\(movies.voteAverage)"
-            popularLabel.text = "\(movies.popularity)"
-            let urlString = "https://image.tmdb.org/t/p/w185\(movies.backdropPath ?? "")"
-            imageView.sd_setImage(with: URL(string: urlString))
-            if let text: String = movies.releaseDate {
-                let convertedDateString = convertDateFormat(dateString: text)
-                rdLabel.text = convertedDateString
+        Observable.just(selectedMovie).subscribe(onNext: { response in
+            self.titleLabel.text = response?.title
+            self.overviewTextView.text = response?.overview
+            self.voteLabel.text = "\(response?.voteAverage ?? 0.0)"
+            self.popularLabel.text = "\(response?.popularity ?? 0.0)"
+            let urlString = "https://image.tmdb.org/t/p/w185\(response?.backdropPath ?? "")"
+            self.imageView.sd_setImage(with: URL(string: urlString))
+            if let text: String = response?.releaseDate {
+                let convertedDateString = self.convertDateFormat(dateString: text)
+                self.rdLabel.text = convertedDateString
             }
+            
         }
+        ).disposed(by: bag)
     }
+    
+    //        if let movies = selectedMovie{
+    //            titleLabel.text = movies.title
+    //            overviewTextView.text = movies.overview
+    //            voteLabel.text = "\(movies.voteAverage)"
+    //            popularLabel.text = "\(movies.popularity)"
+    //            let urlString = "https://image.tmdb.org/t/p/w185\(movies.backdropPath ?? "")"
+    //            imageView.sd_setImage(with: URL(string: urlString))
+    //            if let text: String = movies.releaseDate {
+    //                let convertedDateString = convertDateFormat(dateString: text)
+    //                rdLabel.text = convertedDateString
+    //            }
+    //        }
+    
     
     func checkFav(){
         if detailViewModel.favorties.contains(where: {$0.id == selectedMovie!.id}){
@@ -85,9 +105,10 @@ class DetailViewController: UIViewController {
         }else{
             buttonFav.setImage(UIImage(systemName: "heart"), for: .normal)
             print("check işlemleri doğru çalışıyor, movie kayıtlı değil")
-
+            
         }
     }
+    
     func convertDateFormat(dateString: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
